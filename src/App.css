@@ -1,0 +1,455 @@
+/* src/App.css - Consolidated and Fixed Navigation Logic */
+
+/* --- 1. Branding & Global Variables --- */
+:root {
+  --color-primary-dark: #0A1C29;
+  --color-accent-yellow: #FFC000;
+  --color-neutral-light: #F8F8F8;
+  --color-neutral-mid: #555555;
+  --color-white: #ffffff;
+  --color-section-dark: #122B3E;
+  
+  --font-family-primary: 'Arial', sans-serif; 
+  --header-height: 60px; 
+  /* Menu switch occurs when screen size is 1200px or less */
+  --desktop-breakpoint: 1200px; 
+}
+
+/* --- 2. Global Reset and Typography --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  color: var(--color-neutral-mid);
+  background-color: var(--color-neutral-light);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1, h2, h3 {
+    color: var(--color-primary-dark);
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+/* --- 3. App Layout Container and Main Content --- */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1; 
+  padding: 40px 5%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- 4. Header & Navigation (DESKTOP - Default State > 1200px) --- */
+
+.main-header {
+    background-color:transparent; 
+    height: var(--header-height);
+    padding: 0 5%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    z-index: 1000;
+    color: var(--color-white);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Logo and Image Styling */
+.main-header .logo {
+    margin: 0;
+    padding: 0;
+}
+
+.header-logo-image {
+    max-height: 50px; 
+    width: auto; 
+    display: block;
+}
+
+.main-header.is-not-home {
+    background-color: var(--color-neutral-light); 
+    color: #333;
+    border-bottom-color: rgba(0, 0, 0, 0.1); 
+}
+
+.main-header.is-not-home .main-nav a {
+    color: #333;
+}
+
+.main-header.is-not-home .main-nav a:hover,
+.main-header.is-not-home .main-nav a.active {
+  color: var(--color-accent-yellow); 
+  border-bottom: 2px solid var(--color-accent-yellow);
+}
+
+.main-header.is-not-home .menu-toggle {
+    color: var(--color-primary-dark);
+}
+
+/* Desktop Navigation */
+.main-nav {
+  display: flex; 
+  align-items: center; 
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex; /* Links side-by-side on desktop */
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav li {
+  margin-left: 35px;
+}
+
+.main-nav a {
+  color:white;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding-bottom: 5px;
+  transition: color 0.3s, border-bottom 0.3s;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--color-accent-yellow);
+  border-bottom: 2px solid var(--color-accent-yellow);
+}
+
+/* 💡 Menu Toggle Button (HIDDEN on Desktop by default) */
+.menu-toggle { 
+    display: none; 
+    background: none;
+    border: none;
+    color: var(--color-accent-yellow);
+    font-size: 1.8rem;
+    cursor: pointer;
+    z-index: 1001; 
+}
+
+
+/* --- 5. Footer Styling --- */
+.main-footer {
+  background-color: var(--color-primary-dark);
+  color: var(--color-white);
+  padding: 40px 5%;
+}
+
+.main-footer a {
+  color: white;
+}
+
+
+/* --- 6. Hero/Mission Styles --- */
+.hero-section-global {
+  width: 100vw;
+  margin-left: calc(50% - 50vw); 
+  margin-top: -90px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  color: var(--color-white);
+  text-align: left;
+  position: relative;
+  overflow: hidden; 
+  padding: 140px 20px 100px;
+}
+
+.hero-section-global h1 {
+  padding: 100px 20px 100px;
+}
+
+/* Consistent Pseudo-Element Overlay */
+.hero-section-global::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.20); 
+    z-index: 1; 
+}
+
+/* Content over the image/overlay */
+.hero-section-global h1,
+.mission-summary-global {
+  position: relative; 
+  z-index: 2;
+}
+
+.hero-section-global h1 {
+  color: var(--color-white);
+  font-size: 3.5rem;
+  font-weight: 550;
+  max-width: 900px;
+  margin: 50px 50px 30px;
+  margin-bottom: -100px;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+/* ... (Mission Summary Styles) ... */
+.mission-summary-global {
+  max-width: 800px;
+  margin-left: 45px;
+  padding: 20px 30px;
+  margin-bottom: 40px;
+}
+
+.mission-summary-global .mission-highlight {
+  font-size: 1rem;
+  font-style: italic;
+  color: #F8F8F8;
+}
+
+
+/* --- 7. Utility Button Styles --- */
+/* ... (Button styles remain the same) ... */
+.quick-links { 
+  text-align: center; 
+  padding: 20px 0 40px; 
+  position: relative;
+  z-index: 3;
+  margin-top: -70px;
+}
+
+.quick-links a {
+  background-color: white;
+  color: #333;
+  padding: 20px;
+  margin: 30px;
+  margin-top: -80px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.20);
+  border-radius: 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 30px; /* Larger buttons */
+  margin: 0 10px;
+  text-decoration: none;
+  color:white;
+  background-color: #0A1C29;
+  font-weight: bold;
+  border-radius: 4px; /* Slightly sharp corners */
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* --- 8. Founder's Quote Block Styling --- */
+.founder-quote-block {
+    background-color: var(--color-section-dark); 
+    color: var(--color-white);
+    padding: 60px 5%;
+    margin-left: calc(50% - 50vw); 
+    width: 100vw;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 40px;
+}
+/* ... (Quote styles remain the same) ... */
+
+/* --- 9. Contact Page Layout --- */
+.contact-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+
+/* --- 10. MOBILE & TABLET RESPONSIVENESS (Screens <= 1200px) --- */
+
+@media (max-width: var(--desktop-breakpoint)) { 
+  
+  /* --- Global Adjustments --- */
+  main {
+    padding: 20px 3%;
+  }
+
+  /* --- Header / Navigation (Implementation of Hamburger) --- */
+  .main-header {
+      position: static; 
+      min-height: 60px;
+      /* Ensure logo and button are spaced out */
+      justify-content: space-between; 
+      padding: 0 5%; 
+  }
+  
+  .header-logo-image {
+    max-height: 40px;
+  }
+
+  /* 💡 SHOW the menu button for hamburger functionality */
+  .menu-toggle {
+    display: block; 
+    position: relative; /* Keep it in the header flow */
+    z-index: 1001; 
+  }
+
+  /* 💡 HIDE the desktop navigation by default */
+  .main-nav {
+    display: none; 
+    position: absolute;
+    top: 60px; /* Position below the header (adjust if min-height changes) */
+    left: 0;
+    width: 100%;
+    background-color: var(--color-section-dark); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  /* 💡 SHOW menu when 'is-open' class is toggled by React */
+  .main-nav.is-open {
+    display: block; 
+  }
+
+  /* Vertical stacking for the dropdown menu */
+  .main-nav ul {
+    flex-direction: column; 
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  .main-nav li {
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .main-nav a {
+    display: block;
+    padding: 15px 0;
+    width: 100%;
+    border-bottom: none;
+  }
+  
+  /* --- Hero Section Adjustments --- */
+  .hero-section-global {
+    margin-top: 0;
+    padding: 100px 5% 50px;
+    min-height: 400px;
+  }
+  
+  .hero-section-global h1 {
+    font-size: 2.2rem;
+  }
+
+  /* --- Contact Page Grid --- */
+  .contact-grid-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  /* --- Button/Footer Adjustments --- */
+  .quick-links .btn {
+    display: block;
+    margin: 10px auto; 
+  }
+}
+
+/* src/App.css - Section 10: MOBILE & TABLET RESPONSIVENESS */
+
+@media (max-width: var(--desktop-breakpoint)) { 
+
+  main {
+    padding: 20px 3%;
+  }
+  
+  /* Reset header positioning for mobile menu overlap */
+  .main-header {
+      position: static; 
+      min-height: 60px;
+      justify-content: space-between; 
+      padding: 0 5%;
+      display: flex;
+  }
+
+  .menu-toggle {
+    display: block !important; /* Force button display */
+    position: relative; 
+    z-index: 1001; 
+  }
+  
+  .header-logo-image {
+    max-height: 40px;
+  }
+
+  /* 💡 MOBILE: Show the hamburger button */
+  .menu-toggle {
+    display: block;
+    position: relative; 
+    z-index: 1001; 
+  }
+
+  /* 💡 MOBILE: Hide the desktop navigation by default */
+  .main-nav {
+    display: flex; 
+    align-items: center;
+    position: absolute;
+    top: 60px; 
+    left: 0;
+    width: 100%;
+    background-color: var(--color-section-dark); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+
+  /* 💡 MOBILE: Show menu when 'is-open' class is toggled by React */
+  .main-nav.is-open {
+    display: block; 
+  }
+
+  .main-nav {
+    display: block; 
+  }
+
+  /* Vertical stacking for the dropdown menu */
+  .main-nav ul {
+    display: block; 
+    flex-direction: column; 
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .main-nav li {
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .main-nav a {
+    display: block;
+    padding: 15px 0;
+    width: 100%;
+    border-bottom: none;
+  }
+  
+  /* ... (rest of mobile styles) ... */
+  .hero-section-global h1 {
+    font-size: 2.2rem;
+  }
+
+  .contact-grid-layout {
+    grid-template-columns: 1fr;
+  }
+}

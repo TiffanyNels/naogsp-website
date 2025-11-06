@@ -1,0 +1,353 @@
+/* src/pages.css */
+
+/* --- Page Introduction/Sub-Header Styles --- */
+.page-intro {
+    padding: 20px 0 40px;
+    border-bottom: 1px solid var(--color-neutral-light);
+    margin-bottom: 40px;
+}
+
+.page-intro h1 {
+    font-size: 2.2rem;
+    color: var(--color-primary-dark);
+    margin-bottom: 10px;
+}
+
+.page-intro p {
+    font-size: 1.1rem;
+    color: var(--color-neutral-mid);
+    max-width: 800px;
+}
+
+/* --- Modular Content Grid (Matching the Inspiration's service cards) --- */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.content-card {
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 4px solid transparent;
+}
+
+.content-card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-top-color: var(--color-accent-yellow); /* Highlight border on hover */
+}
+
+.content-card .icon-placeholder {
+    font-size: 2rem;
+    color: var(--color-accent-yellow);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.content-card h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--color-primary-dark);
+    margin-bottom: 10px;
+}
+
+.content-card p {
+    font-size: 0.95rem;
+    color: var(--color-neutral-mid);
+}
+
+/* --- Membership Specific Styles (For the tables) --- */
+.membership-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.membership-table th, .membership-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-neutral-mid);
+}
+
+.membership-table th {
+    background-color: var(--color-primary-dark);
+    color: var(--color-accent-yellow);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.membership-table tr:nth-child(even) {
+    background-color: var(--color-neutral-light);
+}
+
+.membership-table td:first-child {
+    font-weight: bold;
+    color: var(--color-primary-dark);
+}
+
+/* src/pages.css - MOBILE & TABLET RESPONSIVENESS */
+
+@media (max-width: 992px) {
+    /* Tablet/Landscape View: Display Content Cards in 2 columns */
+    .content-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
+
+
+@media (max-width: 768px) {
+    /* Mobile View: Stack all content into a single column */
+
+    /* --- General Cards Grid --- */
+    .content-grid {
+        /* Force a single column layout */
+        grid-template-columns: 1fr; 
+    }
+
+    /* --- Contact Page Grid --- */
+    .contact-grid-layout {
+        /* Stack the info card and the form */
+        grid-template-columns: 1fr;
+    }
+
+    /* --- Map Height --- */
+    .map-embed-box {
+        height: 300px; /* Reduce height of map on smaller screens */
+    }
+
+    /* --- Founder Quote Block --- */
+    .founder-quote-block {
+        padding: 40px 5%;
+    }
+    
+    .founder-quote-block .quote-text {
+        font-size: 1.5rem;
+    }
+}
+
+/* src/pages.css - Document Submission Styles */
+
+.document-submission-section {
+    padding: 40px 0;
+    margin-top: 40px;
+    border-top: 1px solid var(--color-neutral-mid);
+}
+
+.document-submission-section h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.document-submission-section p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    font-size: 1.1rem;
+}
+
+.submission-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.submission-card {
+    /* Uses the same styling as content-card but adds a subtle accent */
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid var(--color-primary-dark);
+    text-align: center;
+}
+
+.submission-card h3 {
+    font-size: 1.4rem;
+    color: var(--color-primary-dark);
+}
+
+.submission-card .icon-placeholder {
+    font-size: 3rem;
+    color: var(--color-accent-yellow);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.upload-placeholder {
+    padding: 15px;
+    background-color: var(--color-neutral-light);
+    border: 1px dashed var(--color-neutral-mid);
+    color: var(--color-neutral-mid);
+    margin-top: 15px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+
+/* Media Query for Mobile Responsiveness */
+@media (max-width: 768px) {
+    .submission-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- News & Media Page Styles --- */
+
+.news-content-layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* Main content wider than sidebar */
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* Category Filter Navigation */
+.category-filter-nav {
+    grid-column: 1 / -1; /* Span the full width above the main content and sidebar */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-neutral-mid);
+}
+
+.filter-btn {
+    background-color: var(--color-neutral-light);
+    color: var(--color-primary-dark);
+    border: 1px solid var(--color-neutral-mid);
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.filter-btn:hover {
+    background-color: var(--color-neutral-mid);
+}
+
+.filter-btn.active {
+    background-color: var(--color-accent-yellow);
+    color: var(--color-section-dark);
+    border-color: var(--color-accent-yellow);
+    font-weight: 700;
+}
+
+/* Main News Feed */
+.main-news-feed {
+    display: grid;
+    gap: 30px;
+}
+
+.news-article-card {
+    border-left: 4px solid var(--color-accent-yellow);
+    padding: 20px 20px 20px 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    background-color: var(--color-white);
+}
+
+.news-article-card h2 {
+    font-size: 1.5rem;
+    margin: 5px 0 10px;
+    color: var(--color-primary-dark);
+}
+
+.article-date {
+    font-size: 0.9rem;
+    color: var(--color-neutral-mid);
+    margin-bottom: 15px;
+}
+
+.news-category-tag {
+    display: inline-block;
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 4px;
+}
+
+.read-more-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--color-accent-yellow);
+    font-weight: 600;
+}
+
+
+/* Sidebar Widgets */
+.news-sidebar .sidebar-widget {
+    background-color: var(--color-neutral-light);
+    padding: 25px;
+    border-radius: 6px;
+    margin-bottom: 30px;
+    border-top: 3px solid var(--color-primary-dark);
+}
+
+.sidebar-widget h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--color-primary-dark);
+}
+
+.newsletter-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--color-neutral-mid);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.quick-links-widget ul {
+    list-style: none;
+    padding: 0;
+}
+
+.quick-links-widget li {
+    padding: 8px 0;
+    border-bottom: 1px dashed var(--color-neutral-mid);
+}
+
+.quick-links-widget li:last-child {
+    border-bottom: none;
+}
+
+.quick-links-widget a {
+    color: var(--color-primary-dark);
+    text-decoration: none;
+}
+
+.gallery-placeholder {
+    height: 150px;
+    background-color: var(--color-neutral-mid);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+
+/* Media Query for Mobile Responsiveness */
+@media (max-width: 992px) {
+    .news-content-layout {
+        grid-template-columns: 1fr; /* Stack content and sidebar on smaller screens */
+        gap: 30px;
+    }
+
+    .news-sidebar {
+        order: -1; /* Place the sidebar above the main feed on mobile */
+    }
+}
