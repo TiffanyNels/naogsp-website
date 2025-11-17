@@ -35,7 +35,7 @@ function Header() {
         aria-expanded={isMenuOpen}
         aria-controls="main-navigation"
       >
-       {isMenuOpen ? <FaTimes /> : <FaBars />}
+        {isMenuOpen ? '✕' : '☰'} {/* Icon Change */}
       </button>
 
       {/* 💡 Apply conditional class 'is-open' */}

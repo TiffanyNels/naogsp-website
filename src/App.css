@@ -12,7 +12,7 @@
   --font-family-primary: 'Arial', sans-serif; 
   --header-height: 60px; 
   /* Menu switch occurs when screen size is 1200px or less */
-  --desktop-breakpoint: 1200px; 
+  --desktop-breakpoint: 900px; 
 }
 
 /* --- 2. Global Reset and Typography --- */
@@ -106,13 +106,12 @@ main {
 
 /* Desktop Navigation */
 .main-nav {
-  display: flex; 
   align-items: center; 
 }
 
 .main-nav ul {
   list-style: none;
-  display: flex; /* Links side-by-side on desktop */
+  display: flex;
   margin: 0;
   padding: 0;
 }
@@ -258,6 +257,202 @@ main {
   letter-spacing: 0.5px;
 }
 
+/* --- Key Pillars Section Styling --- */
+
+.key-pillars-section {
+    padding: 60px 5%;
+    /* Use a light background color for contrast against white or dark sections */
+    background-color: var(--color-neutral-light); 
+    text-align: center;
+}
+
+.key-pillars-section h2 {
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: var(--color-primary-dark); /* Ensure heading is dark and readable */
+}
+
+.pillars-grid {
+    display: grid;
+    /* Responsive grid: columns adjust automatically, minimum size 280px */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px; /* Max width to contain the grid nicely */
+    margin: 0 auto;
+}
+
+.pillar-card {
+    background-color: var(--color-white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow for 3D effect */
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.pillar-card:hover {
+    transform: translateY(-5px); /* Lift card slightly on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.pillar-icon {
+    font-size: 3em;
+    color: var(--color-accent-yellow); /* Use the accent color for icons */
+    margin-bottom: 15px;
+}
+
+.pillar-card h3 {
+    color: var(--color-primary-dark);
+    margin-bottom: 10px;
+}
+
+.pillar-card p {
+    color: var(--color-text-light);
+    font-size: 0.95em;
+    margin-bottom: 15px;
+}
+
+.read-more-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--color-accent-yellow);
+    font-weight: bold;
+    text-decoration: none; /* Remove underline by default */
+    transition: color 0.3s;
+}
+
+.read-more-link:hover {
+    color: var(--color-primary-dark); /* Change color slightly on hover */
+}
+
+/* --- Responsive Adjustment --- */
+@media (max-width: 600px) {
+    .key-pillars-section {
+        padding: 40px 5%;
+    }
+    .pillars-grid {
+        gap: 20px;
+    }
+}
+
+/* --- Membership CTA Section Styling --- */
+
+.membership-cta-section {
+    padding: 80px 5%;
+    /* Dark background for high contrast and strong emphasis */
+    background-color: var(--color-primary-dark); 
+    color: var(--color-white);
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.membership-cta-section h3 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    /* Ensure heading color is explicitly white against the dark background */
+    color: var(--color-white); 
+}
+
+.membership-cta-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+/* Simplified CTA Button Styling */
+.cta-btn {
+    padding: 14px 30px; 
+    font-size: 1em; /* Use standard font size */
+    font-weight: 600; /* Slightly bold text */
+}
+
+/* --- 5. Leadership/Directors Section Styling --- */
+
+.leadership-section {
+    padding: 60px 5%;
+    background-color: var(--color-white); /* Ensures a clean white background */
+    text-align: center;
+}
+
+.leadership-section h2 {
+    font-size: 2em;
+    color: var(--color-primary-dark);
+    margin-bottom: 10px;
+}
+
+.leadership-tagline {
+    font-size: 1.1em;
+    color: var(--color-text-light);
+    margin-bottom: 40px;
+}
+
+.directors-grid {
+    display: grid;
+    /* Creates a responsive grid: min 250px wide, max 1fr */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.director-card {
+    text-align: center;
+    padding: 25px;
+    border-radius: 8px;
+    background-color: var(--color-neutral-light); /* Light background for the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+}
+
+.director-photo {
+    width: 120px;
+    height: 120px;
+    /* Placeholder styling for the photo circle */
+    /* This style creates the circular placeholder with the yellow border */
+    background-color: var(--color-text-light); 
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+    overflow: hidden;
+    /* Adds a thin, accent border, similar to the PDF visuals */
+    border: 3px solid var(--color-accent-yellow); 
+    
+    /* Center the placeholder text */
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-size: 0.8em; 
+}
+
+.director-card h3 {
+    font-size: 1.3em;
+    color: var(--color-primary-dark);
+    margin-bottom: 5px;
+}
+
+.director-title {
+    font-size: 0.95em;
+    color: var(--color-accent-yellow);
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.director-bio {
+    font-size: 0.9em;
+    color: var(--color-text-light);
+    min-height: 40px; /* Ensures all cards have a similar minimum height */
+}
+
+/* --- Responsive Adjustments for Small Screens --- */
+@media (max-width: 600px) {
+    .directors-grid {
+        grid-template-columns: 1fr; /* Stack cards vertically on very small screens */
+    }
+}
+
 /* --- 8. Founder's Quote Block Styling --- */
 .founder-quote-block {
     background-color: var(--color-section-dark); 
@@ -279,159 +474,53 @@ main {
     margin-bottom: 60px;
 }
 
-
-/* --- 10. MOBILE & TABLET RESPONSIVENESS (Screens <= 1200px) --- */
-
-@media (max-width: var(--desktop-breakpoint)) { 
+/* --- Mobile Menu Behavior --- */
+@media (max-width: 1080px) {
   
-  /* --- Global Adjustments --- */
-  main {
-    padding: 20px 3%;
-  }
-
-  /* --- Header / Navigation (Implementation of Hamburger) --- */
-  .main-header {
-      position: static; 
-      min-height: 60px;
-      /* Ensure logo and button are spaced out */
-      justify-content: space-between; 
-      padding: 0 5%; 
-  }
-  
-  .header-logo-image {
-    max-height: 40px;
-  }
-
-  /* 💡 SHOW the menu button for hamburger functionality */
+  /* 💡 Show the button on mobile */
   .menu-toggle {
     display: block; 
-    position: relative; /* Keep it in the header flow */
-    z-index: 1001; 
+    position: absolute; /* Position relative to the header */
+    top: 15px;
+    right: 5%;
   }
 
-  /* 💡 HIDE the desktop navigation by default */
-  .main-nav {
-    display: none; 
-    position: absolute;
-    top: 60px; /* Position below the header (adjust if min-height changes) */
-    left: 0;
-    width: 100%;
-    background-color: var(--color-section-dark); 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    z-index: 999;
-  }
-
-  /* 💡 SHOW menu when 'is-open' class is toggled by React */
-  .main-nav.is-open {
-    display: block; 
-  }
-
-  /* Vertical stacking for the dropdown menu */
-  .main-nav ul {
-    flex-direction: column; 
-    padding: 20px 0;
-    text-align: center;
-  }
-
-  .main-nav li {
-    margin: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .main-nav a {
-    display: block;
-    padding: 15px 0;
-    width: 100%;
-    border-bottom: none;
-  }
-  
-  /* --- Hero Section Adjustments --- */
-  .hero-section-global {
-    margin-top: 0;
-    padding: 100px 5% 50px;
-    min-height: 400px;
-  }
-  
-  .hero-section-global h1 {
-    font-size: 2.2rem;
-  }
-
-  /* --- Contact Page Grid --- */
-  .contact-grid-layout {
-    grid-template-columns: 1fr;
-  }
-  
-  /* --- Button/Footer Adjustments --- */
-  .quick-links .btn {
-    display: block;
-    margin: 10px auto; 
-  }
-}
-
-/* src/App.css - Section 10: MOBILE & TABLET RESPONSIVENESS */
-
-@media (max-width: var(--desktop-breakpoint)) { 
-
-  main {
-    padding: 20px 3%;
-  }
-  
-  /* Reset header positioning for mobile menu overlap */
+  /* 💡 Header Stack for Mobile */
   .main-header {
-      position: static; 
-      min-height: 60px;
-      justify-content: space-between; 
-      padding: 0 5%;
-      display: flex;
-  }
-
-  .menu-toggle {
-    display: block !important; /* Force button display */
-    position: relative; 
-    z-index: 1001; 
-  }
-  
-  .header-logo-image {
-    max-height: 40px;
-  }
-
-  /* 💡 MOBILE: Show the hamburger button */
-  .menu-toggle {
-    display: block;
-    position: relative; 
-    z-index: 1001; 
-  }
-
-  /* 💡 MOBILE: Hide the desktop navigation by default */
-  .main-nav {
-    display: flex; 
+    flex-direction: row; /* Keep logo and button aligned */
+    justify-content: space-between;
     align-items: center;
+    position: relative; /* Needed for absolute positioning of button */
+    padding: 15px 5%;
+    min-height: 80px; /* Ensure space for the logo and button */
+  }
+  
+  /* 💡 Navigation Menu - Default Hidden State */
+  .main-nav {
+    display: none; /* Hide the menu by default */
     position: absolute;
-    top: 60px; 
+    top: 100%; /* Position right below the header */
     left: 0;
     width: 100%;
+    /* Use a solid background for contrast when open */
     background-color: var(--color-section-dark); 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     z-index: 999;
   }
 
-  /* 💡 MOBILE: Show menu when 'is-open' class is toggled by React */
+  /* 💡 Navigation Menu - Open State */
   .main-nav.is-open {
-    display: block; 
+    display: block; /* Show menu when 'is-open' class is applied */
   }
 
-  .main-nav {
-    display: block; 
-  }
-
-  /* Vertical stacking for the dropdown menu */
+  /* Stack menu items vertically when menu is open */
   .main-nav ul {
-    display: block; 
     flex-direction: column; 
     padding: 20px 0;
+    list-style: none;
     text-align: center;
   }
-  
+
   .main-nav li {
     margin: 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -443,13 +532,9 @@ main {
     width: 100%;
     border-bottom: none;
   }
-  
-  /* ... (rest of mobile styles) ... */
-  .hero-section-global h1 {
-    font-size: 2.2rem;
-  }
 
-  .contact-grid-layout {
-    grid-template-columns: 1fr;
+  /* Overrides for Hero Section due to header change */
+  .hero-section-global {
+      margin-top: 0; /* Ensure no negative margin pushes it up */
   }
 }
