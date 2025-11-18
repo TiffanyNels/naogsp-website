@@ -146,17 +146,112 @@ main {
 }
 
 
-/* --- 5. Footer Styling --- */
+/* --- 5. Footer Styling (Update) --- */
+
 .main-footer {
-  background-color: var(--color-primary-dark);
-  color: var(--color-white);
-  padding: 40px 5%;
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    padding: 40px 5%;
 }
 
-.main-footer a {
-  color: white;
+/* Main wrapper for the Inquiry and Nav sections */
+.footer-content-main {
+    display: flex;
+    justify-content: center; /* Pushes the two columns to the edges */
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto 30px auto; 
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+    gap: 450px;
 }
 
+.footer-section h3 {
+    color: var(--color-accent-yellow);
+    font-size: 1rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* Shared List Styles */
+.inquiry-list, 
+.nav-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Inquiry List (Left Section) */
+.inquiry-list li {
+    margin-bottom: 15px;
+    font-size: 0.85rem;
+}
+
+.inquiry-list a {
+    color: var(--color-white);
+    text-decoration: none;
+    display: flex;
+    align-items: center; /* Vertically align icon and text */
+    transition: color 0.3s;
+    font-weight: 300;
+}
+
+.inquiry-list a:hover {
+    color: var(--color-accent-yellow);
+}
+
+.icon-wrapper {
+    margin-right: 10px;
+    font-size: 0.95rem;
+    width: 20px; 
+    text-align: center;
+}
+
+/* Navigation Links List (Right Section) */
+.nav-links-list li {
+    margin-bottom: 8px;
+}
+
+.nav-links-list a {
+    color: var(--color-white);
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 0.85rem;
+    font-weight: 300;
+}
+
+.nav-links-list a:hover {
+    color: var(--color-accent-yellow);
+}
+
+/* Bottom Copyright Section */
+.footer-copyright {
+    text-align: left; 
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.7);
+    padding-top: 10px;
+}
+
+/* Responsive Styling: Stack columns on smaller screens */
+@media (max-width: 650px) {
+    .footer-content-main {
+        flex-direction: column; /* Stacks the two columns */
+        align-items: center; /* Centers items horizontally */
+        gap: 0;
+    }
+    
+    .footer-section {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    
+    /* Center the link content in the stacked layout */
+    .inquiry-list a, 
+    .nav-links-list a {
+        justify-content: center; 
+    }
+}
 
 /* --- 6. Hero/Mission Styles --- */
 .hero-section-global {
