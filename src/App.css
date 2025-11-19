@@ -97,7 +97,7 @@ main {
 .main-header.is-not-home .main-nav a:hover,
 .main-header.is-not-home .main-nav a.active {
   color: var(--color-accent-yellow); 
-  border-bottom: 2px solid var(--color-accent-yellow);
+  background-color: var(--color-neutral-light);
 }
 
 .main-header.is-not-home .menu-toggle {
@@ -131,7 +131,6 @@ main {
 .main-nav a:hover,
 .main-nav a.active {
   color: var(--color-accent-yellow);
-  border-bottom: 2px solid var(--color-accent-yellow);
 }
 
 /* 💡 Menu Toggle Button (HIDDEN on Desktop by default) */
@@ -544,7 +543,7 @@ main {
 /* --- Responsive Adjustments for Small Screens --- */
 @media (max-width: 600px) {
     .directors-grid {
-        grid-template-columns: 1fr; /* Stack cards vertically on very small screens */
+        grid-template-columns: 1fr;
     }
 }
 
@@ -575,50 +574,59 @@ main {
   /* 💡 Show the button on mobile */
   .menu-toggle {
     display: block; 
-    position: absolute; /* Position relative to the header */
+    position: absolute;
+    font-size: 1.65rem;
     top: 15px;
     right: 5%;
   }
 
+  .main-header.is-not-home .menu-toggle {
+      color: var(--color-primary-dark);
+      background-color: var(--color-neutral-light); ;
+  }
+
   /* 💡 Header Stack for Mobile */
   .main-header {
-    flex-direction: row; /* Keep logo and button aligned */
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    position: relative; /* Needed for absolute positioning of button */
+    position: relative;
     padding: 15px 5%;
-    min-height: 80px; /* Ensure space for the logo and button */
+    min-height: 80px; 
+    font-size: 1.8rem;
+    z-index: 1001;
   }
   
   /* 💡 Navigation Menu - Default Hidden State */
   .main-nav {
-    display: none; /* Hide the menu by default */
+    display: none;
     position: absolute;
-    top: 100%; /* Position right below the header */
+    top: 100%;
     left: 0;
     width: 100%;
-    /* Use a solid background for contrast when open */
-    background-color: var(--color-section-dark); 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    background-color: var(--color-neutral-light);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     z-index: 999;
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out;
   }
 
   /* 💡 Navigation Menu - Open State */
   .main-nav.is-open {
-    display: block; /* Show menu when 'is-open' class is applied */
+    display: block;
+    border-radius: 0px 0px 20px 20px;
+    opacity: 1;
   }
 
   /* Stack menu items vertically when menu is open */
   .main-nav ul {
-    flex-direction: column; 
-    padding: 20px 0;
+    display: block;
     list-style: none;
     text-align: center;
   }
 
   .main-nav li {
     margin: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   
   .main-nav a {
@@ -626,10 +634,19 @@ main {
     padding: 15px 0;
     width: 100%;
     border-bottom: none;
+    color: var(--color-primary-dark); 
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .main-nav a:hover,
+  .main-nav a.active {
+      color: var(--color-accent-yellow);
+      border-radius: 0px 0px 20px 20px;
   }
 
   /* Overrides for Hero Section due to header change */
   .hero-section-global {
-      margin-top: 0; /* Ensure no negative margin pushes it up */
+      margin-top: 0;
   }
 }
