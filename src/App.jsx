@@ -15,7 +15,7 @@ import Membership from './components/Membership';
 import Partnerships from './components/Partnerships';
 import NewsAndMedia from './components/NewsAndMedia';
 
-import HeroImage from './assets/Oil-and-gas-site-696x369.jpg';
+import HeroImage from './assets/Header_Background.webp';
 
 function App() {
   // State for data fetching and status

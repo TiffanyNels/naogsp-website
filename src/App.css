@@ -11,7 +11,6 @@
   
   --font-family-primary: 'Arial', sans-serif; 
   --header-height: 60px; 
-  /* Menu switch occurs when screen size is 1200px or less */
   --desktop-breakpoint: 900px; 
 }
 
@@ -60,7 +59,9 @@ main {
 /* --- 4. Header & Navigation (DESKTOP - Default State > 1200px) --- */
 
 .main-header {
-    background-color:transparent; 
+    background-color:transparent;
+    position: fixed;
+    width: 100%; 
     height: var(--header-height);
     padding: 0 5%; 
     display: flex;
@@ -69,7 +70,6 @@ main {
     top: 0;
     z-index: 1000;
     color: var(--color-white);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Logo and Image Styling */
@@ -138,7 +138,7 @@ main {
     display: none; 
     background: none;
     border: none;
-    color: var(--color-accent-yellow);
+    color: var(--color-primary-dark);
     font-size: 1.8rem;
     cursor: pointer;
     z-index: 1001; 
@@ -156,7 +156,7 @@ main {
 /* Main wrapper for the Inquiry and Nav sections */
 .footer-content-main {
     display: flex;
-    justify-content: center; /* Pushes the two columns to the edges */
+    justify-content: center;
     align-items: flex-start;
     max-width: 1200px;
     margin: 0 auto 30px auto; 
@@ -190,7 +190,7 @@ main {
     color: var(--color-white);
     text-decoration: none;
     display: flex;
-    align-items: center; /* Vertically align icon and text */
+    align-items: center;
     transition: color 0.3s;
     font-weight: 300;
 }
@@ -234,8 +234,8 @@ main {
 /* Responsive Styling: Stack columns on smaller screens */
 @media (max-width: 650px) {
     .footer-content-main {
-        flex-direction: column; /* Stacks the two columns */
-        align-items: center; /* Centers items horizontally */
+        flex-direction: column;
+        align-items: center;
         gap: 0;
     }
     
@@ -255,8 +255,9 @@ main {
 /* --- 6. Hero/Mission Styles --- */
 .hero-section-global {
   width: 100vw;
-  margin-left: calc(50% - 50vw); 
-  margin-top: -90px;
+  margin-left: calc(50% - 50vw);
+  padding-top: calc(var(--header-height) + 80px); 
+  margin-top: 0;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -339,13 +340,13 @@ main {
 
 .btn {
   display: inline-block;
-  padding: 14px 30px; /* Larger buttons */
+  padding: 14px 30px;
   margin: 0 10px;
   text-decoration: none;
   color:white;
   background-color: #0A1C29;
   font-weight: bold;
-  border-radius: 4px; /* Slightly sharp corners */
+  border-radius: 4px;
   transition: all 0.3s;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -355,7 +356,6 @@ main {
 
 .key-pillars-section {
     padding: 60px 5%;
-    /* Use a light background color for contrast against white or dark sections */
     background-color: var(--color-neutral-light); 
     text-align: center;
 }
@@ -363,40 +363,38 @@ main {
 .key-pillars-section h2 {
     font-size: 2em;
     margin-bottom: 40px;
-    color: var(--color-primary-dark); /* Ensure heading is dark and readable */
+    color: #333;
 }
 
 .pillars-grid {
     display: grid;
-    /* Responsive grid: columns adjust automatically, minimum size 280px */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    max-width: 1200px; /* Max width to contain the grid nicely */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .pillar-card {
     background-color: var(--color-white);
     padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Subtle shadow for 3D effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
 }
 
 .pillar-card:hover {
-    transform: translateY(-5px); /* Lift card slightly on hover */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
 .pillar-icon {
     font-size: 3em;
-    color: var(--color-accent-yellow); /* Use the accent color for icons */
+    color: var(--color-accent-yellow);
     margin-bottom: 15px;
 }
 
 .pillar-card h3 {
-    color: var(--color-primary-dark);
+    color:#333;
     margin-bottom: 10px;
 }
 
@@ -409,14 +407,14 @@ main {
 .read-more-link {
     display: inline-block;
     margin-top: 15px;
-    color: var(--color-accent-yellow);
+    color: var(--color-primary-dark);
     font-weight: bold;
-    text-decoration: none; /* Remove underline by default */
+    text-decoration: none;
     transition: color 0.3s;
 }
 
 .read-more-link:hover {
-    color: var(--color-primary-dark); /* Change color slightly on hover */
+    color: var(--color-primary-dark);
 }
 
 /* --- Responsive Adjustment --- */
@@ -433,9 +431,8 @@ main {
 
 .membership-cta-section {
     padding: 80px 5%;
-    /* Dark background for high contrast and strong emphasis */
-    background-color: var(--color-primary-dark); 
-    color: var(--color-white);
+    background-color: var(--color-neutral-light); 
+    color: #333;
     text-align: center;
 }
 
@@ -447,8 +444,7 @@ main {
 .membership-cta-section h3 {
     font-size: 2.5em;
     margin-bottom: 15px;
-    /* Ensure heading color is explicitly white against the dark background */
-    color: var(--color-white); 
+    color: #333; 
 }
 
 .membership-cta-section p {
@@ -460,21 +456,25 @@ main {
 /* Simplified CTA Button Styling */
 .cta-btn {
     padding: 14px 30px; 
-    font-size: 1em; /* Use standard font size */
-    font-weight: 600; /* Slightly bold text */
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 0px;
 }
 
 /* --- 5. Leadership/Directors Section Styling --- */
 
 .leadership-section {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-bottom: -40px;
     padding: 60px 5%;
-    background-color: var(--color-white); /* Ensures a clean white background */
+    background-color: var(--color-white);
     text-align: center;
 }
 
 .leadership-section h2 {
     font-size: 2em;
-    color: var(--color-primary-dark);
+    color: #333;
     margin-bottom: 10px;
 }
 
@@ -486,7 +486,6 @@ main {
 
 .directors-grid {
     display: grid;
-    /* Creates a responsive grid: min 250px wide, max 1fr */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
     max-width: 1200px;
@@ -496,24 +495,18 @@ main {
 .director-card {
     text-align: center;
     padding: 25px;
-    border-radius: 8px;
-    background-color: var(--color-neutral-light); /* Light background for the card */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+    background-color: transparent;
+    box-shadow: none; 
 }
 
 .director-photo {
     width: 120px;
     height: 120px;
-    /* Placeholder styling for the photo circle */
-    /* This style creates the circular placeholder with the yellow border */
     background-color: var(--color-text-light); 
     border-radius: 50%;
     margin: 0 auto 15px auto;
     overflow: hidden;
-    /* Adds a thin, accent border, similar to the PDF visuals */
     border: 3px solid var(--color-accent-yellow); 
-    
-    /* Center the placeholder text */
     display: flex; 
     align-items: center;
     justify-content: center;
@@ -537,7 +530,7 @@ main {
 .director-bio {
     font-size: 0.9em;
     color: var(--color-text-light);
-    min-height: 40px; /* Ensures all cards have a similar minimum height */
+    min-height: 40px;
 }
 
 /* --- Responsive Adjustments for Small Screens --- */
@@ -558,7 +551,6 @@ main {
     margin-top: 60px;
     margin-bottom: 40px;
 }
-/* ... (Quote styles remain the same) ... */
 
 /* --- 9. Contact Page Layout --- */
 .contact-grid-layout {
@@ -590,7 +582,6 @@ main {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    position: relative;
     padding: 15px 5%;
     min-height: 80px; 
     font-size: 1.8rem;
@@ -601,10 +592,11 @@ main {
   .main-nav {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 80px;
     left: 0;
     width: 100%;
-    background-color: var(--color-neutral-light);
+    backdrop-filter: blur(4px); 
+    -webkit-backdrop-filter: blur(3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     z-index: 999;
     opacity: 0; 
@@ -634,7 +626,7 @@ main {
     padding: 15px 0;
     width: 100%;
     border-bottom: none;
-    color: var(--color-primary-dark); 
+    color: var(--color-neutral-light); 
     font-weight: 500;
     transition: all 0.2s;
   }
