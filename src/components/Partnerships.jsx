@@ -1,5 +1,7 @@
 // src/components/Partnerships.jsx
 import React from 'react';
+// 💡 Import the new formal icons
+import { FaHandshake, FaChartBar, FaBriefcase, FaCogs, FaShippingFast, FaBalanceScale } from 'react-icons/fa';
 
 function Partnerships() {
   return (
@@ -25,31 +27,36 @@ function Partnerships() {
       <div className="content-grid">
         
         <div className="content-card">
-          <span className="icon-placeholder">📊</span>
+          {/* 💡 Icon: Market Information Sharing (FaChartBar) */}
+          <span className="icon-placeholder"><FaChartBar /></span>
           <h3>Market Information Sharing</h3>
           <p>Sharing market information and research to provide members with actionable business intelligence.</p>
         </div>
 
         <div className="content-card">
-          <span className="icon-placeholder">💼</span>
+          {/* 💡 Icon: Business Facilitation (FaBriefcase) */}
+          <span className="icon-placeholder"><FaBriefcase /></span>
           <h3>Business Facilitation</h3>
           <p>Facilitating direct business partnerships between Angolan and Namibian service companies.</p>
         </div>
         
         <div className="content-card">
-          <span className="icon-placeholder">⚙️</span>
+          {/* 💡 Icon: Technology Exchange (FaCogs) */}
+          <span className="icon-placeholder"><FaCogs /></span>
           <h3>Technology Exchange</h3>
           <p>Promoting joint training initiatives and technology exchange to elevate regional capabilities.</p>
         </div>
 
         <div className="content-card">
-          <span className="icon-placeholder">⛓️</span>
+          {/* 💡 Icon: Supply-Chain Efficiency (FaShippingFast) */}
+          <span className="icon-placeholder"><FaShippingFast /></span>
           <h3>Supply-Chain Efficiency</h3>
           <p>Promoting supply-chain efficiency and advocating for local content growth across both nations.</p>
         </div>
 
         <div className="content-card">
-          <span className="icon-placeholder">⚖️</span>
+          {/* 💡 Icon: Policy Alignment (FaBalanceScale) */}
+          <span className="icon-placeholder"><FaBalanceScale /></span>
           <h3>Regional Policy Alignment</h3>
           <p>Establishing joint advocacy efforts for regional policy alignment to create a unified regulatory environment.</p>
         </div>

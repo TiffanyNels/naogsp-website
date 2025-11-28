@@ -1,5 +1,7 @@
 // src/components/WhatWeDo.jsx
 import React from 'react';
+// 💡 Import the new formal icons
+import { FaGavel, FaGraduationCap, FaCalendarAlt, FaShieldAlt, FaGlobe, FaHandsHelping } from 'react-icons/fa';
 
 function WhatWeDo() {
   return (
@@ -19,7 +21,8 @@ function WhatWeDo() {
         
         {/* Activity 1: Advocacy */}
         <div className="content-card">
-          <span className="icon-placeholder">🗣️</span>
+          {/* 💡 Icon: Policy/Advocacy (FaGavel) */}
+          <span className="icon-placeholder"><FaGavel /></span>
           <h3>Advocacy & Policy</h3>
           <p>
             Representing member interests in government and industry discussions to advocate for supportive industry policies.
@@ -28,7 +31,8 @@ function WhatWeDo() {
 
         {/* Activity 2: Training & Education */}
         <div className="content-card">
-          <span className="icon-placeholder">📚</span>
+          {/* 💡 Icon: Education (FaGraduationCap) */}
+          <span className="icon-placeholder"><FaGraduationCap /></span>
           <h3>Training & Education</h3>
           <p>
             Developing essential skills through targeted workshops, specialised training, and certification programs.
@@ -37,7 +41,8 @@ function WhatWeDo() {
 
         {/* Activity 3: Networking */}
         <div className="content-card">
-          <span className="icon-placeholder">🗓️</span>
+          {/* 💡 Icon: Events/Calendar (FaCalendarAlt) */}
+          <span className="icon-placeholder"><FaCalendarAlt /></span>
           <h3>Networking & Events</h3>
           <p>
             Hosting conferences, exhibitions, trade events, and social functions to facilitate business connections and information sharing.
@@ -46,7 +51,8 @@ function WhatWeDo() {
 
         {/* Activity 4: Safety & Sustainability */}
         <div className="content-card">
-          <span className="icon-placeholder">⛑️</span>
+          {/* 💡 Icon: Safety/Protection (FaShieldAlt) */}
+          <span className="icon-placeholder"><FaShieldAlt /></span>
           <h3>Safety & Sustainability</h3>
           <p>
             Promoting adherence to international HSE (Health, Safety, Environment) standards and best practices in offshore operations.
@@ -55,7 +61,8 @@ function WhatWeDo() {
         
         {/* Activity 5: Collaboration */}
         <div className="content-card">
-          <span className="icon-placeholder">🌐</span>
+          {/* 💡 Icon: Regional/Global Collaboration (FaHandsHelping) */}
+          <span className="icon-placeholder"><FaHandsHelping /></span>
           <h3>Regional Collaboration</h3>
           <p>
             Working with local and international associations to grow the sector and promote local content development.

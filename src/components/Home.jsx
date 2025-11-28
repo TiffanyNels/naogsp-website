@@ -3,6 +3,63 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaArrowRight, FaHandsHelping, FaGlobe, FaUserCheck } from 'react-icons/fa'; 
 
+import CarlPhoto from '../assets/director_images/Carl.jpeg';
+import AndrewPhoto from '../assets/director_images/Andrew.png';
+import DanielPhoto from '../assets/director_images/Daniel.webp';
+import JamieleePhoto from '../assets/director_images/Jamie-lee.jpeg';
+import KnowledgePhoto from '../assets/director_images/Knowledge.png';
+import PatrickPhoto from '../assets/director_images/Patrick.jpeg';
+import SalomoPhoto from '../assets/director_images/Salomo.jpg';
+
+const PlaceholderPhoto = null; 
+
+// 💡 DIRECTOR DATA ARRAY (Includes titles and bios)
+const directorsData = [
+  { 
+    name: 'Carl Pesat', 
+    title: 'Director & Chairperson', 
+    bio: 'Visionary leader focused on industry unification and growth.',
+    photo: CarlPhoto 
+  },
+  { 
+    name: 'Knowledge Ipinge', 
+    title: 'Director', 
+    bio: 'Specializing in policy engagement and stakeholder relations.',
+    photo: AndrewPhoto 
+  },
+  { 
+    name: 'Jamie-Lee Nels', 
+    title: 'Director', 
+    bio: 'Expert in strategic communication and youth mentorship initiatives.',
+    photo: JamieleePhoto 
+  },
+  { 
+    name: 'Patrick Sam', 
+    title: 'Director', 
+    bio: 'Driving safety standards and environmental stewardship programs.',
+    photo: KnowledgePhoto
+  },
+  { 
+    name: 'Andrew Mathias', 
+    title: 'Director', 
+    bio: 'Focuses on technical collaboration and resource leveraging.',
+    photo: PatrickPhoto 
+  },
+  { 
+    name: 'Daniel Malherbe', 
+    title: 'Director', 
+    bio: 'Contributes expertise in financial planning and governance.',
+    photo: DanielPhoto 
+  },
+  { 
+    name: 'Salomo Hei', 
+    title: 'Director', 
+    bio: 'Leads efforts in local content development and capacity building.',
+    photo: SalomoPhoto 
+  },
+];
+
+
 function Home() { 
   
   return (
@@ -59,69 +116,33 @@ function Home() {
           </div>
       </section>
 
-      {/* --- 4. LEADERSHIP/DIRECTORS SECTION (Updated with PDF Names) --- */}
+      {/* --- 4. LEADERSHIP/DIRECTORS SECTION (Now Dynamic) --- */}
       <section className="leadership-section">
         <h2>Meet Our Directors</h2>
         <p className="leadership-tagline">Guiding NAOGSP towards a future of sustainable global collaboration.</p>
         
         <div className="directors-grid">
           
-          {/* Director Card 1 */}
-          <div className="director-card">
-            <div className="director-photo"></div>
-            <h3>Carl Pesat</h3>
-            <p className="director-title">Director (Placeholder Title)</p>
-            <p className="director-bio">Visionary leader focused on industry unification and growth.</p>
-          </div>
-          
-          {/* Director Card 2 */}
-          <div className="director-card">
-            <div className="director-photo"></div>
-            <h3>Knowledge Ipinge</h3>
-            <p className="director-title">Director (Placeholder Title)</p>
-            <p className="director-bio">Specializing in policy engagement and stakeholder relations.</p>
-          </div>
-          
-          {/* Director Card 3 */}
-          <div className="director-card">
-            <div className="director-photo"></div>
-            <h3>Jamie-Lee Nels</h3>
-            <p className="director-title">Director (Placeholder Title)</p>
-            <p className="director-bio">Expert in strategic communication and youth mentorship initiatives.</p>
-          </div>
-          
-          {/* Director Card 4 */}
-          <div className="director-card">
-            <div className="director-photo"></div>
-            <h3>Patrick Sam</h3>
-            <p className="director-title">Director (Placeholder Title)</p>
-            <p className="director-bio">Driving safety standards and environmental stewardship programs.</p>
-          </div>
-          
-          {/* Director Card 5 */}
-          <div className="director-card">
-            <div className="director-photo"></div>
-            <h3>Andrew Mathias</h3>
-            <p className="director-title">Director (Placeholder Title)</p>
-            <p className="director-bio">Focuses on technical collaboration and resource leveraging.</p>
-          </div>
-          
-          {/* Director Card 6 */}
-          <div className="director-card">
-            <div className="director-photo"></div>
-            <h3>Danie Malherbe</h3>
-            <p className="director-title">Director (Placeholder Title)</p>
-            <p className="director-bio">Contributes expertise in financial planning and governance.</p>
-          </div>
-          
-          {/* Director Card 7 */}
-          <div className="director-card">
-            <div className="director-photo"></div>
-            <h3>Salomo Hei</h3>
-            <p className="director-title">Director (Placeholder Title)</p>
-            <p className="director-bio">Leads efforts in local content development and capacity building.</p>
-          </div>
-          
+          {/* 💡 DYNAMICALLY RENDER DIRECTORS HERE */}
+          {directorsData.map((director, index) => (
+            <div className="director-card" key={index}>
+              <div className="director-photo">
+                {/* 💡 Conditionally render image or placeholder */}
+                {director.photo ? (
+                  <img 
+                    src={director.photo} 
+                    alt={director.name} 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                  />
+                ) : (
+                  <span>Photo</span> /* Placeholder text while image is null */
+                )}
+              </div>
+              <h3>{director.name}</h3>
+              <p className="director-title">{director.title}</p>
+              <p className="director-bio">{director.bio}</p>
+            </div>
+          ))}
 
         </div>
       </section>

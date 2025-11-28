@@ -1,5 +1,9 @@
 // src/components/Membership.jsx
 import React from 'react';
+import { 
+    FaNewspaper, FaLink, FaRocket, FaShieldAlt, FaGraduationCap, FaGavel, 
+    FaFileDownload, FaEnvelope, FaCloudUploadAlt 
+} from 'react-icons/fa'; 
 import MembershipFormPDF from '/src/NAOGSP_Membership_Form.pdf';
 
 function Membership() {
@@ -22,37 +26,38 @@ const MembershipFormPDF = '/NAOGSP_Membership_Form.pdf';
       <div className="content-grid">
         
         <div className="content-card">
-          <span className="icon-placeholder">📰</span>
+          <span className="icon-placeholder"><FaNewspaper /></span>
           <h3>Stay Informed</h3>
           <p>Stay updated on policy changes and industry news impacting your business.</p>
         </div>
 
         <div className="content-card">
-          <span className="icon-placeholder">🔗</span>
+          <span className="icon-placeholder"><FaLink /></span>
           <h3>Networking & Access</h3>
           <p>Access exclusive events, partnerships, and networking opportunities with international and local firms.</p>
         </div>
         
         <div className="content-card">
-          <span className="icon-placeholder">🚀</span>
+          {/* 💡 Icon: Competitiveness/Growth (FaRocket) */}
+          <span className="icon-placeholder"><FaRocket /></span>
           <h3>Industry Competitiveness</h3>
           <p>Enhance your competitiveness with more clients and business opportunities in Namibia's oil and gas sector.</p>
         </div>
 
         <div className="content-card">
-          <span className="icon-placeholder">🛡️</span>
+          <span className="icon-placeholder"><FaShieldAlt /></span>
           <h3>Tackle Critical Issues</h3>
           <p>Address safety, environmental, and security concerns to ensure contract security.</p>
         </div>
 
         <div className="content-card">
-          <span className="icon-placeholder">🎓</span>
+          <span className="icon-placeholder"><FaGraduationCap /></span>
           <h3>Training & Development</h3>
           <p>Develop industry skills through specialised training and development programs.</p>
         </div>
 
         <div className="content-card">
-          <span className="icon-placeholder">🏛️</span>
+          <span className="icon-placeholder"><FaGavel /></span>
           <h3>Advocacy & Viability</h3>
           <p>Access to market and local participation to expand your customer base through association advocacy.</p>
         </div>
@@ -166,7 +171,7 @@ const MembershipFormPDF = '/NAOGSP_Membership_Form.pdf';
             
              {/* Card 1: Download Link */}
             <div className="submission-card">
-                <span className="icon-placeholder">📄</span>
+                <span className="icon-placeholder"><FaFileDownload /></span>
                 <h3>Download Membership Form</h3>
                 <p>
                     Download and complete the official NAOGSP Membership Application Form to begin the process.
@@ -184,7 +189,7 @@ const MembershipFormPDF = '/NAOGSP_Membership_Form.pdf';
             
             {/* Card 2: Email Submission */}
             <div className="submission-card">
-                <span className="icon-placeholder">📧</span>
+                <span className="icon-placeholder"><FaEnvelope /></span>
                 <h3>Option 1: Email Submission</h3>
                 <p>
                     Attach the completed form and all supporting documents (proof of registration, tax certificate, company profile, logo) to an email and send it to the Membership Officer.
@@ -194,7 +199,7 @@ const MembershipFormPDF = '/NAOGSP_Membership_Form.pdf';
 
             {/* Card 3: Online Submission */}
             <div className="submission-card">
-                <span className="icon-placeholder">☁️</span>
+                <span className="icon-placeholder"><FaCloudUploadAlt /></span>
                 <h3>Option 2: Online File Submission</h3>
                 <p>
                     You can securely upload your files directly to our designated submission folder (e.g., using a Dropbox File Request or Google Drive Upload link).

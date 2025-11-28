@@ -2,6 +2,8 @@
 import React from 'react';
 // 💡 Import the Formspree hook
 import { useForm } from '@formspree/react'; 
+// 💡 Import the new formal icons
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 function Contact() {
   const phoneNumber = '+264 85 770 7090';
@@ -36,28 +38,30 @@ function Contact() {
       {/* --- Main Contact Grid (Map & Info) --- */}
       <div className="contact-grid-layout">
         
-        {/* Contact Information Card (Remains unchanged) */}
+        {/* Contact Information Card */}
         <div className="contact-info-card content-card">
-          {/* ... (Existing Contact Info Code) ... */}
           <h3>Get In Touch</h3>
           <p>
             Our team is ready to respond to your queries promptly.
           </p>
 
           <div className="detail-item">
-            <span className="icon-placeholder">📞</span>
+            {/* 💡 Icon: Phone (FaPhone) */}
+            <span className="icon-placeholder"><FaPhone /></span>
             <h4>Phone Number</h4>
             <p>{phoneNumber}</p>
           </div>
 
           <div className="detail-item">
-            <span className="icon-placeholder">📧</span>
+            {/* 💡 Icon: Email (FaEnvelope) */}
+            <span className="icon-placeholder"><FaEnvelope /></span>
             <h4>Email Address</h4>
             <p>{emailAddress}</p>
           </div>
           
           <div className="detail-item">
-            <span className="icon-placeholder">📍</span>
+            {/* 💡 Icon: Location (FaMapMarkerAlt) */}
+            <span className="icon-placeholder"><FaMapMarkerAlt /></span>
             <h4>Office Location (Placeholder)</h4>
             <p>Windhoek, Namibia (View our office on the map below)</p>
           </div>
@@ -70,7 +74,7 @@ function Contact() {
           </div>
         </div>
 
-        {/* Contact Form Section */}
+        {/* Contact Form Section (Remains unchanged) */}
         <div className="contact-form-container">
             <h2>Send Us a Message</h2>
             <p>Use the form below to send messages directly to our team.</p>
@@ -115,15 +119,6 @@ function Contact() {
                 {/* Display any general error message */}
                 {state.errors && <p className="form-error">An error occurred: Please check your connection and try again.</p>}
             </form>
-        </div>
-      </div>
-
-      {/* --- Interactive Map Placeholder (Remains unchanged) --- */}
-      <div className="map-placeholder">
-        <h2>Office Location</h2>
-        <p>View the office location on an interactive map.</p>
-        <div className="map-embed-box">
-            [Interactive Map Placeholder]
         </div>
       </div>
 
