@@ -123,11 +123,9 @@ function Home() {
         
         <div className="directors-grid">
           
-          {/* 💡 DYNAMICALLY RENDER DIRECTORS HERE */}
           {directorsData.map((director, index) => (
             <div className="director-card" key={index}>
               <div className="director-photo">
-                {/* 💡 Conditionally render image or placeholder */}
                 {director.photo ? (
                   <img 
                     src={director.photo} 
@@ -135,7 +133,7 @@ function Home() {
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                   />
                 ) : (
-                  <span>Photo</span> /* Placeholder text while image is null */
+                  <span>Photo</span> 
                 )}
               </div>
               <h3>{director.name}</h3>
