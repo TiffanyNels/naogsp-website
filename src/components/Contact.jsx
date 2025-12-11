@@ -52,13 +52,12 @@ function Contact() {
           
           <div className="detail-item">
             <span className="icon-placeholder"><FaMapMarkerAlt /></span>
-            <h4>Office Location (Placeholder)</h4>
-            <p>Windhoek, Namibia (View our office on the map below)</p>
+            <h4>Location</h4>
+            <p>Windhoek, Namibia</p>
           </div>
 
           <div className="document-links">
             <h4 style={{ marginTop: '20px' }}>Quick Downloads</h4>
-            <p>Visitors will be able to download membership documents and brochures here.</p>
             <a href="#" className="btn secondary small-btn">Download Brochure</a>
             <a href="#" className="btn secondary small-btn">Membership Forms</a>
           </div>
