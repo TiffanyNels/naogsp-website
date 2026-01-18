@@ -46,7 +46,6 @@ h2 {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  margin-top: 50px;
 }
 
 main {
@@ -71,7 +70,6 @@ main {
     top: 0;
     z-index: 1000;
     color: var(--color-white);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); 
     backdrop-filter: blur(1px); 
     -webkit-backdrop-filter: blur(1px);
 }
@@ -336,7 +334,7 @@ main {
   background-color: white;
   color: #333;
   padding: 20px;
-  margin: 30px;
+  margin-bottom: 50px;
   margin-top: -80px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.20);
   border-radius: 0;
@@ -374,6 +372,22 @@ main {
     letter-spacing: normal;
     margin: 0 5px 0 0; 
     margin-top: 15px;
+}
+
+.btn.primary:hover {
+     background-color: #E6AC00;
+}
+
+.btn.tertiary:hover {
+     background-color: #E6AC00;
+}
+
+.btn-icon {
+    font-size: 25px;
+    margin-right: 8px;
+    margin-bottom: 5px;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .contact-info-card .detail-item { 

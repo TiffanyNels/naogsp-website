@@ -1,7 +1,8 @@
 // src/components/Home.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaArrowRight, FaHandsHelping, FaGlobe, FaUserCheck } from 'react-icons/fa'; 
+import { FaArrowRight, FaHandsHelping, FaGlobe, FaUserCheck, } from 'react-icons/fa'; 
+import { FiUserPlus, FiUsers, FiPlus  } from "react-icons/fi";
 
 import CarlPhoto from '../assets/director_images/Carl.jpeg';
 import AndrewPhoto from '../assets/director_images/Andrew.png';
@@ -22,7 +23,7 @@ const directorsData = [
     photo: CarlPhoto 
   },
   { 
-    name: 'Knowledge Ipinge', 
+    name: 'Andrew Mathias', 
     title: 'Director', 
     bio: 'Specializing in policy engagement and stakeholder relations.',
     photo: AndrewPhoto 
@@ -34,13 +35,13 @@ const directorsData = [
     photo: JamieleePhoto 
   },
   { 
-    name: 'Patrick Sam', 
+    name: 'Knowledge Ipinge', 
     title: 'Director', 
     bio: 'Driving safety standards and environmental stewardship programs.',
     photo: KnowledgePhoto
   },
   { 
-    name: 'Andrew Mathias', 
+    name: 'Patrick Sam', 
     title: 'Director', 
     bio: 'Focuses on technical collaboration and resource leveraging.',
     photo: PatrickPhoto 
@@ -68,13 +69,13 @@ function Home() {
       {/* 1. QUICK LINKS (Existing Buttons) */}
       <div className="quick-links">
         <a href="/membership" className="btn primary">
-          <span className="btn-content">Join NAOGSP <FaArrowRight className="btn-icon" /></span>
+          <span className="btn-content"><FiUserPlus className="btn-icon" /> Join NAOGSP </span>
         </a>
         <a href="/membership#benefits" className="btn secondary">
-          <span className="btn-content">Membership Benefits <FaArrowRight className="btn-icon" /></span>
+          <span className="btn-content"> <FiPlus className="btn-icon" /> Membership Benefits </span>
         </a>
         <a href="/partnerships" className="btn tertiary">
-          <span className="btn-content">Partnerships & Collaborations <FaArrowRight className="btn-icon" /></span>
+           <span className="btn-content"> <FiUsers className="btn-icon" /> Partnerships & Collaborations </span>
         </a>
       </div>
       
