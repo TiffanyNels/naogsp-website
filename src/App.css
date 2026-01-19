@@ -538,16 +538,26 @@ main {
     padding: 60px 5%;
     background-color: var(--color-neutral-light); 
     text-align: center;
+    display: flex;
+    gap: 280px;
+    max-width: 1200px;
 }
 
-.key-pillars-section h2 {
-    font-size: 2em;
+.pillar-header {
+    display: flex;
+    text-align: left;
     margin-bottom: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.pillar-header h2 {
+    display: inline-block;
+    font-size: 2.5em;
     color: #333;
 }
 
 .pillars-grid {
-    display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
     max-width: 1200px;
@@ -555,22 +565,21 @@ main {
 }
 
 .pillar-card {
-    background-color: var(--color-white);
     padding: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: center;
+    text-align: left;
+    display: flex;
+    gap: 30px;
 }
 
-.pillar-card:hover {
+/* .pillar-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
+} */
 
 .pillar-icon {
-    font-size: 3em;
+    font-size: 2.5em;
     color: var(--color-accent-yellow);
-    margin-bottom: 15px;
+    margin-bottom: 15px;  
 }
 
 .pillar-card h3 {

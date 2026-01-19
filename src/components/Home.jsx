@@ -1,8 +1,9 @@
 // src/components/Home.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaArrowRight, FaHandsHelping, FaGlobe, FaUserCheck, } from 'react-icons/fa'; 
-import { FiUserPlus, FiUsers, FiPlus  } from "react-icons/fi";
+import { FaRegHandshake, } from 'react-icons/fa'; 
+import { FiUserCheck, FiUserPlus, FiUsers, FiPlus } from "react-icons/fi";
+import { GrLanguage } from "react-icons/gr";
 
 import CarlPhoto from '../assets/director_images/Carl.jpeg';
 import AndrewPhoto from '../assets/director_images/Andrew.png';
@@ -81,28 +82,44 @@ function Home() {
       
       {/* --- 2. KEY PILLARS PREVIEW --- */}
       <section className="key-pillars-section">
-        <h2>Our Core Focus</h2>
+
+        <div className='pillar-header'>
+           <h2>Our Core Focus</h2>
+        </div>
+      
         <div className="pillars-grid">
           
           <div className="pillar-card">
-            <FaGlobe className="pillar-icon" />
-            <h3>Global Policy Advocacy</h3>
-            <p>We work to shape international policy, providing expert guidance to governments and regulatory bodies to ensure ethical and sustainable practices.</p>
-            <Link to="/what-we-do" className="read-more-link">Learn More</Link>
+            <div className='icon-container'>
+              <GrLanguage className="pillar-icon" /> 
+            </div>
+            <div className='pillar-context'>
+              <h3> Global Policy Advocacy</h3>
+              <p>We work to shape international policy, providing expert guidance to governments and regulatory bodies to ensure ethical and sustainable practices.</p>
+              <Link to="/what-we-do" className="read-more-link">Learn More</Link>
+              </div> 
           </div>
           
           <div className="pillar-card">
-            <FaHandsHelping className="pillar-icon" />
-            <h3>Industry Collaboration</h3>
-            <p>Connecting industry leaders with research institutions to bridge the gap between discovery and technological application in offshore projects.</p>
-            <Link to="/what-we-do" className="read-more-link">Learn More</Link>
+            <div className='icon-container'>
+              <FaRegHandshake className="pillar-icon" />
+            </div>
+            <div className='pillar-context'>
+              <h3> Industry Collaboration</h3>
+              <p>Connecting industry leaders with research institutions to bridge the gap between discovery and technological application in offshore projects.</p>
+              <Link to="/what-we-do" className="read-more-link">Learn More</Link>
+              </div> 
           </div>
           
           <div className="pillar-card">
-            <FaUserCheck className="pillar-icon" />
-            <h3>Professional Development</h3>
-            <p>Offering mentorship, training, and resources to cultivate the next generation of geoscience professionals.</p>
-            <Link to="/what-we-do" className="read-more-link">Learn More</Link>
+            <div className='icon-container'>
+              <FiUserCheck className="pillar-icon" />
+            </div> 
+            <div className='pillar-context'>
+              <h3> Professional Development</h3>
+              <p>Offering mentorship, training, and resources to cultivate the next generation of geoscience professionals.</p>
+              <Link to="/what-we-do" className="read-more-link">Learn More</Link>
+              </div> 
           </div>
 
         </div>
