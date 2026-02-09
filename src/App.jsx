@@ -15,7 +15,7 @@ import Membership from './components/Membership';
 import Partnerships from './components/Partnerships';
 import NewsAndMedia from './components/NewsAndMedia';
 
-import HeroImage from './assets/Offshore_background.webp';
+import HeroImage from './assets/Offshore-background.webp';
 
 function App() {
   // State for data fetching and status
@@ -71,12 +71,14 @@ function App() {
           className="hero-section-global"
           style={{ backgroundImage: `url(${HeroImage})` }} 
         >
-          <h1>Uniting Offshore Oil and Gas Service Companies in Namibia.</h1>
+          <div className='hero-text'>
+         <h1>Uniting Offshore Oil and Gas Service Companies in Namibia.</h1>
           
           <div className="mission-summary-global">
               <p className="mission-highlight">
                   Established to advocate for the growth and development of service companies in the offshore oil and gas industry.
               </p>
+          </div>
           </div>
         </div>
       )}

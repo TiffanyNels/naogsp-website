@@ -269,6 +269,14 @@ main {
   position: relative;
   overflow: hidden; 
   padding: 140px 20px 100px;
+  transform: scaleX(-1); 
+  z-index: 0;
+}
+
+.hero-text {
+margin-top: 300px;
+transform: scaleX(-1); 
+z-index: 0;
 }
 
 .hero-section-global h1 {
@@ -323,21 +331,29 @@ main {
 /* --- 7. Utility Button Styles --- */
 /* ... (Button styles remain the same) ... */
 .quick-links { 
-  text-align: center; 
   padding: 20px 0 40px; 
   position: relative;
   z-index: 3;
   margin-top: -70px;
+  display: flex;
+  justify-content: center;
 }
 
 .quick-links a {
+  display: flex;
+  text-align: left;
   background-color: white;
   color: #333;
   padding: 20px;
   margin-bottom: 50px;
-  margin-top: -80px;
+  margin-top: -40px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.20);
-  border-radius: 0;
+  border-radius: 10px;
+  gap: 30px;
+}
+
+.quick-links a:hover {
+     background-color: #E6AC00;
 }
 
 .btn {
@@ -355,15 +371,6 @@ main {
   border: none;
 }
 
-.btn.secondary {
-    background-color: var(--color-neutral-light);
-    color: var(--color-primary-dark);
-}
-
-.btn.secondary:hover {
-    background-color: #E6AC00;
-}
-
 /* Added Small Button Class for Document Links */
 .btn.small-btn {
     padding: 8px 15px;
@@ -374,20 +381,10 @@ main {
     margin-top: 15px;
 }
 
-.btn.primary:hover {
-     background-color: #E6AC00;
-}
-
-.btn.tertiary:hover {
-     background-color: #E6AC00;
-}
-
-.btn-icon {
-    font-size: 25px;
-    margin-right: 8px;
-    margin-bottom: 5px;
-    text-align: center;
+.ql-btn-icon {
+    font-size: 1.5em;
     vertical-align: middle;
+    color: #333;
 }
 
 .contact-info-card .detail-item { 
@@ -653,74 +650,233 @@ main {
 /* --- 5. Leadership/Directors Section Styling --- */
 
 .leadership-section {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-bottom: -40px;
-    padding: 60px 5%;
-    background-color: var(--color-white);
-    text-align: center;
-}
+          width: 100%;
+          padding: 60px 0;
+          text-align: center;
+          overflow-x: hidden;
+        }
 
-.leadership-section h2 {
-    font-size: 2em;
-    color: #333;
-    margin-bottom: 10px;
-}
+        .leadership-section h2.section-title {
+          font-size: 2em;
+          color: #333;
+          margin-bottom: 10px;
+        }
 
-.leadership-tagline {
-    font-size: 1.1em;
-    color: var(--color-text-light);
-    margin-bottom: 40px;
-}
+        .leadership-tagline {
+          font-size: 1.1em;
+          color: var(--color-text-light);
+          margin-bottom: 40px;
+          padding: 0 20px;
+        }
 
-.directors-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        /* --- CAROUSEL CORE --- */
+        .carousel {
+          --nav-btn-size: 44px;
+          --nav-btn-bg: var(--color-primary-dark);
+          --nav-marker-bg: var(--color-primary-dark);
+          
+          width: 90%;
+          max-width: 1400px;
+          margin: 0 auto;
+          list-style: none;
+          padding-block: 3rem;
+          display: grid;
+          grid-auto-flow: column;
+          grid-auto-columns: 280px; 
+          gap: 0;
+          anchor-name: --carousel;
+          overflow-x: auto;
+          scroll-snap-type: x mandatory;
+          overscroll-behavior-x: contain; 
+          scroll-behavior: smooth;
+          scrollbar-width: none;
+          position: relative;
+        }
 
-.director-card {
-    text-align: center;
-    padding: 25px;
-    background-color: transparent;
-    box-shadow: none; 
-}
+        .carousel::-webkit-scrollbar { display: none; }
 
-.director-photo {
-    width: 120px;
-    height: 120px;
-    background-color: var(--color-text-light); 
-    border-radius: 50%;
-    margin: 0 auto 15px auto;
-    overflow: hidden;
-    border: 3px solid var(--color-accent-yellow); 
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    color: var(--color-white);
-    font-size: 0.8em; 
-}
+        .carousel::before,
+        .carousel::after {
+          content: '';
+          width: calc(50% - 140px);
+        }
 
-.director-card h3 {
-    font-size: 1.3em;
-    color: var(--color-primary-dark);
-    margin-bottom: 5px;
-}
+        .carousel { scroll-marker-group: after; }
 
-.director-title {
-    font-size: 0.95em;
-    color: var(--color-accent-yellow);
-    font-weight: bold;
-    margin-bottom: 10px;
-}
+        .carousel::scroll-marker-group {
+          position: absolute;
+          position-anchor: --carousel;
+          inline-size: min(90cqi, 400px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: .5rem;
+          padding-block-start: 2rem;
+          top: anchor(bottom);
+          left: 50%;
+          transform: translateX(-50%);
+        }
 
-.director-bio {
-    font-size: 0.9em;
-    color: var(--color-text-light);
-    min-height: 40px;
-}
+        /* CAROUSEL ITEM */
+        .carousel .director-card-wrap {
+          position: relative;
+          scroll-snap-align: center;
+          scroll-snap-stop: always;
+          container-type: scroll-state;
+          display: grid;
+          grid-template-areas: 'img' 'title' 'desc';
+          text-align: center;
+          padding: 0 15px;
+        }
+
+        .carousel .director-card-wrap h3 {
+          grid-area: title;
+          margin: 1.5rem 0 5px 0;
+          font-size: 1.3em;
+          color: var(--color-primary-dark);
+          transition: all 400ms ease;
+        }
+
+        .carousel .director-card-wrap .info-block {
+          grid-area: desc;
+          transition: all 400ms ease;
+        }
+
+        .carousel .director-card-wrap .director-title {
+          font-size: 0.95em;
+          color: var(--color-accent-yellow);
+          font-weight: bold;
+          margin: 0 0 10px 0;
+        }
+
+        .carousel .director-card-wrap .director-bio {
+          font-size: 0.9em;
+          color: var(--color-text-light);
+          white-space: normal;
+          max-width: 250px;
+          margin: 5px auto;
+          line-height: 1.4;
+        }
+
+        .carousel .director-card-wrap .img-container {
+          grid-area: img;
+          width: 100%;
+          aspect-ratio: 1/1;
+          max-width: 240px;
+          margin: 0 auto;
+          transition: all 400ms ease;
+          transform-origin: center center;
+        }
+
+        .carousel .director-card-wrap .img-container img,
+        .carousel .director-card-wrap .img-container .placeholder-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 20px;
+          border: none; 
+          box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .carousel .director-card-wrap .placeholder-img {
+          background: #eee;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #aaa;
+        }
+
+        /* SNAPPED STATE ANIMATIONS */
+        @container not (scroll-state(snapped: inline)) {
+          .carousel .director-card-wrap h3 {
+            scale: 0.8;
+            opacity: 0.5;
+            translate: 0 -10px;
+          }
+          .carousel .director-card-wrap .info-block {
+            opacity: 0;
+            scale: 0.8;
+          }
+          .carousel .director-card-wrap .img-container {
+            scale: 0.7;
+            opacity: 0.4;
+          }
+        }
+
+        /* NAVIGATION MARKERS */
+        .carousel .director-card-wrap::scroll-marker {
+          content: ' ';
+          height: 10px;
+          aspect-ratio: 1;
+          background-color: var(--nav-marker-bg);
+          border-radius: 50%;
+          transition: 200ms ease;
+          scale: 0.8;
+          opacity: 0.3;
+          cursor: pointer;
+        }
+
+        .carousel .director-card-wrap::scroll-marker:target-current {
+          opacity: 1;
+          scale: 1.2;
+          background-color: var(--color-accent-yellow);
+        }
+
+        /* NAV BUTTONS (Arrows) */
+        .carousel::scroll-button(inline-start) {
+          content: '❮';
+          position: absolute;
+          position-anchor: --carousel;
+          left: calc(anchor(left) - 60px);
+          width: 50px;
+          aspect-ratio: 1;
+          background: transparent; 
+          color: #333; 
+          font-size: 2rem; 
+          display: grid;
+          place-content: center;
+          border: none;
+          cursor: pointer;
+          z-index: 10;
+          transition: transform 150ms ease;
+        }
+
+        .carousel::scroll-button(inline-end) {
+          content: '❯';
+          position: absolute;
+          position-anchor: --carousel;
+          right: calc(anchor(right) - 60px);
+          width: 50px;
+          aspect-ratio: 1;
+          background: transparent;
+          color: #333;
+          font-size: 2rem;
+          display: grid;
+          place-content: center;
+          border: none;
+          cursor: pointer;
+          z-index: 10;
+          transition: transform 150ms ease;
+        }
+
+        .carousel::scroll-button(*):hover:not(:disabled) {
+          transform: scale(1.1);
+        }
+
+        .carousel::scroll-button(*):disabled {
+          opacity: 0.2;
+          cursor: default;
+        }
+
+        @media (max-width: 768px) {
+          .carousel {
+            width: 100%;
+            grid-auto-columns: 85%;
+          }
+          .carousel::before,
+          .carousel::after { width: 7.5%; }
+          .carousel::scroll-button(*) { display: none; }
+        }
 
 /* --- Responsive Adjustments for Small Screens --- */
 @media (max-width: 600px) {

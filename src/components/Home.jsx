@@ -18,49 +18,34 @@ const PlaceholderPhoto = null;
 // 💡 DIRECTOR DATA ARRAY (Includes titles and bios)
 const directorsData = [
   { 
-    name: 'Carl Pesat', 
-    title: 'Director & Chairperson', 
-    bio: 'Visionary leader focused on industry unification and growth.',
-    photo: CarlPhoto 
+    name: 'Carl Pesat',  
+    photo: CarlPhoto
   },
   { 
     name: 'Andrew Mathias', 
-    title: 'Director', 
-    bio: 'Specializing in policy engagement and stakeholder relations.',
-    photo: AndrewPhoto 
+    photo:  AndrewPhoto 
   },
   { 
-    name: 'Jamie-Lee Nels', 
-    title: 'Director', 
-    bio: 'Expert in strategic communication and youth mentorship initiatives.',
+    name: 'Jamie-Lee Nels',
     photo: JamieleePhoto 
   },
   { 
     name: 'Knowledge Ipinge', 
-    title: 'Director', 
-    bio: 'Driving safety standards and environmental stewardship programs.',
     photo: KnowledgePhoto
   },
   { 
     name: 'Patrick Sam', 
-    title: 'Director', 
-    bio: 'Focuses on technical collaboration and resource leveraging.',
     photo: PatrickPhoto 
   },
   { 
-    name: 'Daniel Malherbe', 
-    title: 'Director', 
-    bio: 'Contributes expertise in financial planning and governance.',
+    name: 'Daniel Malherbe',
     photo: DanielPhoto 
   },
   { 
     name: 'Salomo Hei', 
-    title: 'Director', 
-    bio: 'Leads efforts in local content development and capacity building.',
     photo: SalomoPhoto 
   },
 ];
-
 
 function Home() { 
   
@@ -70,13 +55,22 @@ function Home() {
       {/* 1. QUICK LINKS (Existing Buttons) */}
       <div className="quick-links">
         <a href="/membership" className="btn primary">
-          <span className="btn-content"><FiUserPlus className="btn-icon" /> Join NAOGSP </span>
+        <div className='quick-link-icon'>
+          <FiUserPlus className="ql-btn-icon" />
+        </div>
+          <span className="btn-content"> Join NAOGSP </span>
         </a>
         <a href="/membership#benefits" className="btn secondary">
-          <span className="btn-content"> <FiPlus className="btn-icon" /> Membership Benefits </span>
+        <div className='quick-link-icon'>
+          <FiPlus className="ql-btn-icon" />
+        </div>
+          <span className="btn-content"> Membership Benefits </span>
         </a>
         <a href="/partnerships" className="btn tertiary">
-           <span className="btn-content"> <FiUsers className="btn-icon" /> Partnerships & Collaborations </span>
+        <div className='quick-link-icon'>
+          <FiUsers className="ql-btn-icon" />
+        </div>
+           <span className="btn-content"> Partnerships & Collaborations </span>
         </a>
       </div>
       
@@ -135,35 +129,35 @@ function Home() {
       </section>
 
       {/* --- 4. LEADERSHIP/DIRECTORS SECTION (Now Dynamic) --- */}
-      <section className="leadership-section">
-        <h2>Meet Our Directors</h2>
+     <section className="leadership-section">
+        <h2 className="section-title">Meet Our Directors</h2>
         <p className="leadership-tagline">Guiding NAOGSP towards a future of sustainable global collaboration.</p>
         
-        <div className="directors-grid">
-          
+        <div className="carousel">
           {directorsData.map((director, index) => (
-            <div className="director-card" key={index}>
-              <div className="director-photo">
+            <div 
+              className={`director-card-wrap ${index === 0 ? 'scroll-start' : ''}`} 
+              key={index}
+            >
+              <div className="img-container">
                 {director.photo ? (
-                  <img 
-                    src={director.photo} 
-                    alt={director.name} 
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
-                  />
+                  <img src={director.photo} alt={director.name} />
                 ) : (
-                  <span>Photo</span> 
+                  <div className="placeholder-img">Photo</div>
                 )}
               </div>
+              
               <h3>{director.name}</h3>
-              <p className="director-title">{director.title}</p>
-              <p className="director-bio">{director.bio}</p>
+              
+              <div className="info-block">
+                <p className="director-title">{director.title}</p>
+                <p className="director-bio">{director.bio}</p>
+              </div>
             </div>
           ))}
-
         </div>
       </section>
-
-    </div> 
+    </div>
   );
 }
 
