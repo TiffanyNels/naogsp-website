@@ -1,16 +1,30 @@
-# React + Vite
+# NAOGSP Official Website 🇳🇦
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The official web platform for the **Namibian Association for Offshore Oil and Gas Service Providers (NAOGSP)**. This site serves as a central hub for advocacy, networking, and industry information for service providers in Namibia’s growing offshore energy sector.
 
-Currently, two official plugins are available:
+## Project Overview
+The goal of this project was to create a modern, responsive, and authoritative digital presence for NAOGSP to facilitate collaboration between local service providers and international stakeholders.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
+- **Frontend:** HTML5, CSS3, JavaScript (Vanilla/ES6+)
+- **Architecture:** Responsive Web Design (Mobile-first approach)
+- **Deployment:** Netlify 
 
-## React Compiler
+## Key Features
+- **Industry Hub:** Information on association objectives, policy advocacy, and regulatory updates.
+- **Member Resources:** Access to specialist expertise and networking platforms.
+- **Responsive Interface:** Optimized for high-level professional browsing across all devices.
+- **Interactive Elements:** A contact form and downloadable membership applications.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## About NAOGSP
+The Namibian Association for Offshore Oil and Gas Service Providers (NAOGSP) represents the shared interests of offshore service companies. Its goal is to support local service companies in the offshore oil and gas industry through policy advocacy, knowledge sharing, and business development.
 
-## Expanding the ESLint configuration
+## Development Highlights
+- **Clean Architecture:** Focused on a professional aesthetic that aligns with the energy industry's standards.
+- **Performance Optimized:** Minimized load times to ensure accessibility for users in varying network conditions.
+- **SEO Ready:** Structured data to ensure the association remains visible to international partners and investors.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Local Setup
+1. Clone the repository:
+   ```bash
+   git clone [https://github.com/TiffanyNels/naogsp-website.git](https://github.com/TiffanyNels/naogsp-website.git)
