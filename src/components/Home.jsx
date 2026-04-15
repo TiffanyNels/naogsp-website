@@ -1,6 +1,7 @@
 // src/components/Home.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
+<<<<<<< Updated upstream
 import { FaRegHandshake, } from 'react-icons/fa'; 
 import { FiUserCheck, FiUserPlus, FiUsers, FiPlus } from "react-icons/fi";
 import { GrLanguage } from "react-icons/gr";
@@ -46,6 +47,9 @@ const directorsData = [
     photo: SalomoPhoto 
   },
 ];
+=======
+import { FaArrowRight, FaHandsHelping, FaGlobe, FaUserCheck } from 'react-icons/fa'; 
+>>>>>>> Stashed changes
 
 function Home() { 
   
@@ -55,6 +59,7 @@ function Home() {
       {/* 1. QUICK LINKS (Existing Buttons) */}
       <div className="quick-links">
         <a href="/membership" className="btn primary">
+<<<<<<< Updated upstream
         <div className='quick-link-icon'>
           <FiUserPlus className="ql-btn-icon" />
         </div>
@@ -71,11 +76,21 @@ function Home() {
           <FiUsers className="ql-btn-icon" />
         </div>
            <span className="btn-content"> Partnerships & Collaborations </span>
+=======
+          <span className="btn-content">Join NAOGSP <FaArrowRight className="btn-icon" /></span>
+        </a>
+        <a href="/membership#benefits" className="btn secondary">
+          <span className="btn-content">Membership Benefits <FaArrowRight className="btn-icon" /></span>
+        </a>
+        <a href="/partnerships" className="btn tertiary">
+          <span className="btn-content">Partnerships & Collaborations <FaArrowRight className="btn-icon" /></span>
+>>>>>>> Stashed changes
         </a>
       </div>
       
       {/* --- 2. KEY PILLARS PREVIEW --- */}
       <section className="key-pillars-section">
+<<<<<<< Updated upstream
 
         <div className='pillar-header'>
            <h2>Our Core Focus</h2>
@@ -119,6 +134,35 @@ function Home() {
         </div>
       </section>
       
+=======
+        <h2>Our Core Focus</h2>
+        <div className="pillars-grid">
+          
+          <div className="pillar-card">
+            <FaGlobe className="pillar-icon" />
+            <h3>Global Policy Advocacy</h3>
+            <p>We work to shape international policy, providing expert guidance to governments and regulatory bodies to ensure ethical and sustainable practices.</p>
+            <Link to="/what-we-do" className="read-more-link">Learn More</Link>
+          </div>
+          
+          <div className="pillar-card">
+            <FaHandsHelping className="pillar-icon" />
+            <h3>Industry Collaboration</h3>
+            <p>Connecting industry leaders with research institutions to bridge the gap between discovery and technological application in offshore projects.</p>
+            <Link to="/what-we-do" className="read-more-link">Learn More</Link>
+          </div>
+          
+          <div className="pillar-card">
+            <FaUserCheck className="pillar-icon" />
+            <h3>Professional Development</h3>
+            <p>Offering mentorship, training, and resources to cultivate the next generation of geoscience professionals.</p>
+            <Link to="/what-we-do" className="read-more-link">Learn More</Link>
+          </div>
+
+        </div>
+      </section>
+      
+>>>>>>> Stashed changes
       {/* --- 3. MEMBERSHIP CTA --- */}
       <section className="membership-cta-section">
           <div className="cta-content">
@@ -128,6 +172,7 @@ function Home() {
           </div>
       </section>
 
+<<<<<<< Updated upstream
       {/* --- 4. LEADERSHIP/DIRECTORS SECTION (Now Dynamic) --- */}
      <section className="leadership-section">
         <h2 className="section-title">Meet Our Directors</h2>
@@ -158,6 +203,76 @@ function Home() {
         </div>
       </section>
     </div>
+=======
+      {/* --- 4. LEADERSHIP/DIRECTORS SECTION (Updated with PDF Names) --- */}
+      <section className="leadership-section">
+        <h2>Meet Our Directors</h2>
+        <p className="leadership-tagline">Guiding NAOGSP towards a future of sustainable global collaboration.</p>
+        
+        <div className="directors-grid">
+          
+          {/* Director Card 1 */}
+          <div className="director-card">
+            <div className="director-photo"></div>
+            <h3>Carl Pesat</h3>
+            <p className="director-title">Director (Placeholder Title)</p>
+            <p className="director-bio">Visionary leader focused on industry unification and growth.</p>
+          </div>
+          
+          {/* Director Card 2 */}
+          <div className="director-card">
+            <div className="director-photo"></div>
+            <h3>Knowledge Ipinge</h3>
+            <p className="director-title">Director (Placeholder Title)</p>
+            <p className="director-bio">Specializing in policy engagement and stakeholder relations.</p>
+          </div>
+          
+          {/* Director Card 3 */}
+          <div className="director-card">
+            <div className="director-photo"></div>
+            <h3>Jamie-Lee Nels</h3>
+            <p className="director-title">Director (Placeholder Title)</p>
+            <p className="director-bio">Expert in strategic communication and youth mentorship initiatives.</p>
+          </div>
+          
+          {/* Director Card 4 */}
+          <div className="director-card">
+            <div className="director-photo"></div>
+            <h3>Patrick Sam</h3>
+            <p className="director-title">Director (Placeholder Title)</p>
+            <p className="director-bio">Driving safety standards and environmental stewardship programs.</p>
+          </div>
+          
+          {/* Director Card 5 */}
+          <div className="director-card">
+            <div className="director-photo"></div>
+            <h3>Andrew Mathias</h3>
+            <p className="director-title">Director (Placeholder Title)</p>
+            <p className="director-bio">Focuses on technical collaboration and resource leveraging.</p>
+          </div>
+          
+          {/* Director Card 6 */}
+          <div className="director-card">
+            <div className="director-photo"></div>
+            <h3>Danie Malherbe</h3>
+            <p className="director-title">Director (Placeholder Title)</p>
+            <p className="director-bio">Contributes expertise in financial planning and governance.</p>
+          </div>
+          
+          {/* Director Card 7 */}
+          <div className="director-card">
+            <div className="director-photo"></div>
+            <h3>Salomo Hei</h3>
+            <p className="director-title">Director (Placeholder Title)</p>
+            <p className="director-bio">Leads efforts in local content development and capacity building.</p>
+          </div>
+          
+
+        </div>
+      </section>
+
+    </div> 
+>>>>>>> Stashed changes
   );
 }
 
