@@ -6,22 +6,19 @@ import { FaEnvelope, FaPhone } from 'react-icons/fa';
 function Footer() {
   const currentYear = new Date().getFullYear();
 
-  // Navigation Links (matching Header links)
   const navLinks = [
     { to: '/', label: 'Home' },
     { to: '/about', label: 'About Us' },
     { to: '/what-we-do', label: 'What We Do' },
     { to: '/partnerships', label: 'Partnerships' },
     { to: '/membership', label: 'Membership' },
-    { to: '/news-media', label: 'News & Media' },
     { to: '/contact', label: 'Contact' },
   ];
 
-  // Contact info (using the phone number from the presentation PDF)
   const contactInfo = [
     { 
       icon: <FaEnvelope />, 
-      text: 'info@naogsp.com', // Placeholder email
+      text: 'info@naogsp.com',
       href: 'mailto:info@naogsp.com' 
     },
     { 
@@ -35,7 +32,6 @@ function Footer() {
     <footer className="main-footer">
       <div className="footer-content-main">
         
-        {/* Left Side: Inquiry List */}
         <div className="footer-section footer-inquiry">
           <h3>For Enquiries</h3>
           <ul className="inquiry-list">
@@ -50,7 +46,6 @@ function Footer() {
           </ul>
         </div>
         
-        {/* Right Side: Navigation Links */}
         <div className="footer-section footer-nav-links">
           <h3>Quick Links</h3>
           <ul className="nav-links-list">
@@ -64,7 +59,6 @@ function Footer() {
 
       </div>
 
-      {/* Bottom Copyright Section */}
       <div className="footer-copyright">
         &copy; {currentYear} NAOGSP. All rights reserved.
       </div>
@@ -73,5 +67,3 @@ function Footer() {
 }
 
 export default Footer;
-
-// Namibian Association for Offshore Oil and Gas Service Providers (NAOGSP)
