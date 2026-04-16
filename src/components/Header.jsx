@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa'; 
-import LogoImage from '../assets/NAOGSP_Logo_Grey.png';
+import LogoImage from '../assets/NAOGSP_Logo_White.png';
 
 function Header() {
   const location = useLocation();

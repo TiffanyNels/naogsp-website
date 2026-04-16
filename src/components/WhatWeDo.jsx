@@ -2,18 +2,25 @@
 import React from 'react';
 // 💡 Import the new formal icons
 import { FaGavel, FaGraduationCap, FaCalendarAlt, FaShieldAlt, FaGlobe, FaHandsHelping } from 'react-icons/fa';
+import ThirdImage from '../assets/third_image.jpg';
 
 function WhatWeDo() {
   return (
     <section className="what-we-do-page">
       
       {/* Page Intro Section */}
-      <div className="page-intro">
+      <div className="what-we-do-header">
+         <div className="third-image-background"
+                      style={{ backgroundImage: `url(${ThirdImage})` }}>
+      <div className='page-intro'>
         <h1>What We Do</h1>
-        <h2>Our Core Focus Areas for Industry Growth</h2>
+        <h2>Our Core Focus Areas <br />for Industry Growth</h2>
         <p>
-          NAOGSP focuses its efforts on five key areas to ensure the growth, development, and viability of offshore oil and gas service companies in Namibia.
+          NAOGSP focuses its efforts on five key areas to ensure <br /> the growth, development, and viability of offshore oil and gas service companies in Namibia.
         </p>
+      </div>
+        
+      </div>
       </div>
       
       {/* Core Activities (Structured in a 3-column grid using content-grid) */}

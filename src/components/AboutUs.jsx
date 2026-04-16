@@ -2,21 +2,25 @@
 import React from 'react';
 // 💡 Import the new formal icons
 import { FaEye, FaAward, FaGavel, FaUsers, FaChartLine, FaGlobe } from 'react-icons/fa'; 
+import SecondImage from '../assets/Offshore_background.webp';
 
 function AboutUs() {
   return (
     <section className="about-us-page">
-      
+
       {/* Page Intro Section */}
-      <div className="page-intro">
-        <h1>About Us</h1>
-        <h2>Who We Are</h2>
+      <div className="second-image-background"
+                style={{ backgroundImage: `url(${SecondImage})` }} >
+                  <div className='page-intro'>
+                     <h1>About Us</h1>
         <p>
-          The Namibian Association for Offshore Oil and Gas Service Providers (NAOGSP) is a non-profit organization representing Namibia's offshore oil and gas service providers. It aims to strengthen collaboration, promote sustainable practices, and empower local businesses.
+        <span className='about_span_header'>NAOGSP</span> <br /> <span class="about_us_span">The Namibian Association for Offshore Oil and Gas Service Providers</span> <br /> <span className='about_us_context'>A non-profit organisation representing Namibia's offshore oil and gas service providers.<br /> It aims to strengthen collaboration, promote sustainable practices, and empower local businesses.</span>
         </p>
+                  </div>
       </div>
 
-      <h2>Our Core Mandate</h2>
+<div className="core-mandate-section">
+<h2>Our Core Mandate</h2>
       <div className="content-grid">
         
         {/* Vision Card */}
@@ -70,6 +74,8 @@ function AboutUs() {
         </div>
 
       </div>
+</div>
+      
 
     </section>
   );

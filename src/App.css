@@ -87,9 +87,10 @@ main {
 }
 
 .main-header.is-not-home {
-    background-color: var(--color-neutral-light); 
+  background-color: transparent;
     color: #333;
-    border-bottom-color: rgba(0, 0, 0, 0.1); 
+     backdrop-filter: blur(1px); 
+    -webkit-backdrop-filter: blur(1px);
 }
 
 .main-header.is-not-home .main-nav a {
@@ -99,7 +100,6 @@ main {
 .main-header.is-not-home .main-nav a:hover,
 .main-header.is-not-home .main-nav a.active {
   color: var(--color-accent-yellow); 
-  background-color: var(--color-neutral-light);
 }
 
 .main-header.is-not-home .menu-toggle {
@@ -648,7 +648,7 @@ z-index: 0;
 .contact-page {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 50px 20px;
 }
 
 .contact-page .page-intro {
@@ -829,6 +829,7 @@ z-index: 0;
 .membership-page {
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 50px;
 }
 
 .section-title {
@@ -941,6 +942,7 @@ z-index: 0;
 .partnerships-page {
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: 50px;
 }
 
 .section-subtitle {
@@ -960,13 +962,140 @@ z-index: 0;
 .about-us-page {
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: -180px;
+    padding: 130px 20px 100px;
+}
+
+.page-intro {
+ border-style: hidden;
+ padding: 70px 70px 100px;
+}
+
+.about-us-page h1 {
+    color: var(--color-white);
+    font-size: 2rem;
+    margin-bottom: 70px;
+}
+
+.about_span_header {
+    font-size: 4.5rem;
+    margin-bottom: 40px;
+    color: var(--color-white);
+}
+
+.about_us_span {
+    font-size: 2rem;
+    color: var(--color-white);
+    margin-bottom: 40px;
+}
+
+.about_us_context {
+  color: var(--color-white);
+}
+
+.second-image-background {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding-top: calc(var(--header-height) + 80px); 
+  margin-top: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  color: var(--color-white);
+  text-align: left;
+  position: relative;
+  overflow: hidden; 
+  padding: 140px 20px 100px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.second-image-background::before {
+ content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 0.8) 0%, 
+    rgba(0, 0, 0, 0.4) 40%, 
+    rgba(0, 0, 0, 0) 80%
+  );
+  z-index: -1;
+}
+
+.core-mandate-section h2 {
+  margin-top: 70px;
+  color: #333;
+  font-size: 2.5rem;
 }
 
 /* --- What We Do Page --- */
 .what-we-do-page {
     max-width: 1200px;
     margin: 0 auto;
+    margin-top: -180px;
 }
+
+.what-we-do-header {
+   padding: 130px 20px 100px;
+}
+
+.what-we-do-header h1 {
+  color: var(--color-white);
+  font-size: 2rem;
+  margin-bottom: 70px;
+}
+
+.what-we-do-header h2 {
+  font-size: 4.5rem;
+  color: var(--color-white);
+  margin-bottom: 40px;
+}
+
+.what-we-do-header p {
+  font-size: 1.1rem;
+   color: var(--color-white);
+}
+
+.third-image-background {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding-top: calc(var(--header-height) + 80px); 
+  margin-top: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  color: var(--color-white);
+  text-align: left;
+  position: relative;
+  overflow: hidden; 
+  padding: 140px 20px 100px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.third-image-background::before {
+ content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 0.8) 0%, 
+    rgba(0, 0, 0, 0.4) 40%, 
+    rgba(0, 0, 0, 0) 80%
+  );
+  z-index: -1;
+} 
 
 /* --- Leadership Carousel --- */
 .leadership-section {
@@ -1206,7 +1335,7 @@ z-index: 0;
 
   .main-header.is-not-home .menu-toggle {
       color: var(--color-primary-dark);
-      background-color: var(--color-neutral-light);
+      background-color: none;
   }
 
   .main-header {
