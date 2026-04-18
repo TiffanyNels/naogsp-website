@@ -1151,27 +1151,85 @@ z-index: 0;
   left: 0;
   width: 100%;
   height: 100%;
-
-  /* Grab the image from React */
   background-image: var(--bg-image);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-
-  /* THE FLIP */
   transform: scaleX(-1); 
-
-  /* OPTIONAL: Add that black gradient we talked about */
-  /* Since the layer is flipped, 'to left' will appear on the left side of your screen */
   background-image: 
     linear-gradient( to left, 
     rgba(0, 0, 0, 0.8) 0%, 
     rgba(0, 0, 0, 0.4) 40%, 
     rgba(0, 0, 0, 0) 80%),
     var(--bg-image);
-
   z-index: -1;
 }
+
+/* --- Membership-page --- */
+.membership-page {
+  margin-top: -180px;
+  padding: 130px 20px 100px;
+}
+
+.membership-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.membership-header {
+    padding: 70px 70px 100px;
+}
+
+.membership-header h1 {
+    color: var(--color-white);
+    font-size: 2rem;
+    margin-bottom: 70px;
+}
+
+.membership-header h2 {
+    font-size: 4.5rem;
+    color: var(--color-white);
+    margin-bottom: 40px;
+    font-weight: 100;
+} 
+
+.membership-header p {
+    font-size: 1.1rem;
+    color: var(--color-white);
+}
+
+.fith-image-background {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding-top: calc(var(--header-height) + 80px); 
+  margin-top: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 500px;
+  color: var(--color-white);
+  text-align: left;
+  position: relative;
+  overflow: hidden; 
+  padding: 140px 20px 100px;
+} 
+
+.fith-image-background::before {
+ content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right, 
+    rgba(0, 0, 0, 0.8) 0%, 
+    rgba(0, 0, 0, 0.4) 40%, 
+    rgba(0, 0, 0, 0) 80%
+  );
+  z-index: -1;
+}
+
 
 /* --- Leadership Carousel --- */
 .leadership-section {

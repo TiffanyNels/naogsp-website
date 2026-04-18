@@ -5,6 +5,7 @@ import {
     FaFileDownload, FaEnvelope, FaCloudUploadAlt 
 } from 'react-icons/fa'; 
 import MembershipFormPDF from '/src/NAOGSP_Membership_Form.pdf';
+import FithImage from '../assets/fith_image.jpg';
 
 function Membership() {
 const emailAddress = 'contact@naogsp.com';
@@ -13,12 +14,17 @@ const MembershipFormPDF = '/NAOGSP_Membership_Form.pdf';
     <section className="membership-page">
       
       {/* Page Intro Section */}
-      <div className="page-intro">
-        <h1>Membership</h1>
+      <div className="membership-container">
+        <div  className="fith-image-background"
+                      style={{ backgroundImage: `url(${FithImage})` }}>
+        <div className='membership-header'>
+          <h1>Membership</h1>
         <h2>Join Namibia's Offshore Oil and Gas Service Providers</h2>
         <p>
           Invest in your business's future with NAOGSP. Join us in shaping Namibia's offshore oil and gas industry!
         </p>
+        </div>
+      </div>
       </div>
 
       {/* --- Benefits Section (Modular Cards) --- */}
