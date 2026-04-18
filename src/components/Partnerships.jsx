@@ -2,18 +2,24 @@
 import React from 'react';
 // 💡 Import the new formal icons
 import { FaHandshake, FaChartBar, FaBriefcase, FaCogs, FaShippingFast, FaBalanceScale } from 'react-icons/fa';
+import FourthImage from '../assets/fourth_image.jpg';
 
 function Partnerships() {
   return (
     <section className="partnerships-page">
       
       {/* Page Intro Section */}
-      <div className="page-intro">
+      <div className='partnership-intro-container'>
+         <div className="fourth-image-background"
+  style={{ '--bg-image': `url(${FourthImage})` }}>
+        <div className='parnership-page-intro'>
         <h1>Partnerships & Regional Collaboration</h1>
-        <h2>Strengthening Regional and International Ties</h2>
+        <h2>Strengthening Regional <br /> and International Ties</h2>
         <p>
-          NAOGSP actively engages in strategic partnerships and regional collaboration to drive growth and efficiency across the offshore oil and gas service sector in Namibia and across the continent.
+          NAOGSP actively engages in strategic partnerships and regional collaboration <br />to drive growth and efficiency across the offshore oil and gas service sector in Namibia and across the continent.
         </p>
+        </div>
+      </div>
       </div>
 
       {/* --- Key Partnership Section --- */}
