@@ -16,12 +16,12 @@ const MembershipFormPDF = '/NAOGSP_Membership_Form.pdf';
       {/* Page Intro Section */}
       <div className="membership-container">
         <div  className="fith-image-background"
-                      style={{ backgroundImage: `url(${FithImage})` }}>
+                      style={{ '--bg-image': `url(${FithImage})` }}>
         <div className='membership-header'>
           <h1>Membership</h1>
-        <h2>Join Namibia's Offshore Oil and Gas Service Providers</h2>
+        <h2>Join Namibia's Offshore<br /> Oil and Gas Service Providers</h2>
         <p>
-          Invest in your business's future with NAOGSP. Join us in shaping Namibia's offshore oil and gas industry!
+          Invest in your business's future with NAOGSP.<br />Join us in shaping Namibia's offshore oil and gas industry.
         </p>
         </div>
       </div>

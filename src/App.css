@@ -148,7 +148,7 @@ main {
 .main-footer {
     background-color: var(--color-primary-dark); /* DARK background */
     color: var(--color-white);
-    padding: 50px 5% 30px;
+    padding: 20px 5% 30px;
 }
 
 .footer-content-main {
@@ -156,7 +156,7 @@ main {
     justify-content: center;
     align-items: flex-start;
     max-width: 1200px;
-    margin: 0 auto 30px auto; 
+    margin: 70px auto 30px auto; 
     padding-bottom: 30px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15); 
     gap: 450px;
@@ -166,8 +166,7 @@ main {
     color: var(--color-accent-yellow);
     font-size: 1rem;
     margin-bottom: 15px;
-    font-weight: 600;
-    text-transform: uppercase;
+    font-weight: 300;
     letter-spacing: 0.5px;
 }
 
@@ -956,7 +955,7 @@ z-index: 0;
 
 /* --- About Us Page --- */
 .about-us-page {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     margin-top: -180px;
     padding: 130px 20px 100px;
@@ -970,6 +969,7 @@ z-index: 0;
 .about-us-page h1 {
     color: var(--color-white);
     font-size: 2rem;
+    font-weight: 100;
     margin-bottom: 70px;
 }
 
@@ -983,10 +983,6 @@ z-index: 0;
     font-size: 2rem;
     color: var(--color-white);
     margin-bottom: 40px;
-}
-
-.about_us_context {
-  color: var(--color-white);
 }
 
 .second-image-background {
@@ -1024,10 +1020,127 @@ z-index: 0;
   z-index: -1;
 }
 
-.core-mandate-section h2 {
-  margin-top: 70px;
-  color: #333;
-  font-size: 2.5rem;
+.core-mandate-section-one {
+   padding: 60px 40px 40px;
+    background-color: transparent; 
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 80px;
+    position: relative; 
+    z-index: 2;
+    width: 85vw;         
+    max-width: 1400px;;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: auto;
+    margin-right: auto; 
+    box-sizing: border-box;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: flex-start;  
+    gap: 30px;               
+    flex-wrap: wrap;
+}
+
+.content-grid-one {
+    flex: 1;                
+    display: flex; 
+    flex-direction: column;  
+    align-items: flex-end;    
+    min-width: 320px;
+}
+
+.core-mandate-header {
+    flex: 1;             
+    min-width: 300px;
+    text-align: left;
+}
+
+.core-mandate-header h2 {
+   font-size: 1.3rem;
+    font-weight: 100;
+    color: var(--color-accent-yellow);
+    margin-bottom: 30px;
+}
+
+.core-mandate-header h3 {
+ font-size: 2rem;
+    color: var(--color-primary-dark);
+    font-weight: 500;
+    max-width: 500px;
+}
+
+.mandate-context {
+  font-size: 1rem;
+    font-weight: 100;
+    color: #333;
+}
+
+.vision-card, .mission-card {
+    padding: 10px 30px;
+    padding-top: 40px;
+    width: 100%;        
+    min-width: 320px;   
+    max-width: 500px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.vision-card h3, .mission-card h3 {
+   text-align: left;
+    font-size: 1.8rem;
+    font-weight: 100;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.core-mandate-section-one p {
+    text-align: left; 
+    padding-left: 20px;
+    font-size: 1.2rem;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+.content-card-one {
+   margin-bottom: 50px;
+}
+
+.core-madate-section-two {
+   padding: 40px 20px 40px;
+    background-color: var(--color-neutral-light); 
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    width: 90vw;         
+    max-width: 1400px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto; 
+    box-sizing: border-box;
+}
+
+.core-madate-section-two h2 {
+   text-align: left;
+    font-size: 2.5rem;
+    padding-left: 20px;
+    font-size: 1.3rem;
+    font-weight: 100;
+    color: var(--color-accent-yellow);
+    margin-bottom: 20px;
+}
+
+.core-madate-section-two h3 {
+    font-size: 1.2rem;
+    font-weight: 100;
+    margin-bottom: 10px;
+}
+
+.content-card-two {
+    margin-bottom: 50px;
 }
 
 /* --- What We Do Page --- */
@@ -1044,6 +1157,7 @@ z-index: 0;
 .what-we-do-header h1 {
   color: var(--color-white);
   font-size: 2rem;
+  font-weight: 100;
   margin-bottom: 70px;
 }
 
@@ -1110,6 +1224,7 @@ z-index: 0;
 .parnership-page-intro h1 {
     color: var(--color-white);
     font-size: 2rem;
+    font-weight: 100;
     margin-bottom: 70px;
 }
 
@@ -1183,6 +1298,7 @@ z-index: 0;
 .membership-header h1 {
     color: var(--color-white);
     font-size: 2rem;
+    font-weight: 100;
     margin-bottom: 70px;
 }
 
@@ -1199,7 +1315,7 @@ z-index: 0;
 }
 
 .fith-image-background {
-  width: 100vw;
+ width: 100vw;
   margin-left: calc(50% - 50vw);
   padding-top: calc(var(--header-height) + 80px); 
   margin-top: 0;
@@ -1212,6 +1328,9 @@ z-index: 0;
   position: relative;
   overflow: hidden; 
   padding: 140px 20px 100px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 } 
 
 .fith-image-background::before {
@@ -1221,12 +1340,17 @@ z-index: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to right, 
+  background-image: var(--bg-image);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  transform: scaleX(-1); 
+  background-image: 
+    linear-gradient( to left, 
     rgba(0, 0, 0, 0.8) 0%, 
     rgba(0, 0, 0, 0.4) 40%, 
-    rgba(0, 0, 0, 0) 80%
-  );
+    rgba(0, 0, 0, 0) 80%),
+    var(--bg-image);
   z-index: -1;
 }
 
@@ -1625,4 +1749,15 @@ z-index: 0;
     text-align: center;
     margin: 8px 0 0 0;
   }
+}
+
+@media (max-width: 768px) {
+    .content-grid-one {
+        justify-content: center;
+    }
+    
+    .core-mandate-section-one {
+        align-items: center; 
+        padding: 40px 20px;  
+    }
 }
