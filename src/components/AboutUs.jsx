@@ -3,6 +3,8 @@ import React from 'react';
 // 💡 Import the new formal icons
 import { FaEye, FaAward, FaGavel, FaUsers, FaChartLine, FaGlobe } from 'react-icons/fa'; 
 import SecondImage from '../assets/Offshore_background.webp';
+import SubImage from '../assets/sub-background.jpg';
+import SecondSubImage from '../assets/second-sub-background.png';
 
 function AboutUs() {
   return (
@@ -18,6 +20,17 @@ function AboutUs() {
         </p>
                   </div>
       </div>
+
+<div 
+  className='second-sub-background-image'
+
+  style={{ 
+    // The gradient (top) sits on top of the image (bottom)
+    backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 1) 40%, rgba(255, 255, 255, 0) 60%), url(${SecondSubImage})`,
+    backgroundSize: 'cover, cover', 
+    backgroundPosition: 'top center', 
+    backgroundRepeat: 'no-repeat, no-repeat',
+  }}>
 
 <div className="core-mandate-section-one">
 
@@ -47,7 +60,18 @@ function AboutUs() {
       </div>
 
 </div>
+</div>
+
+<div className='sub-background-image'
+  style={{ 
+    backgroundImage: `url(${SubImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat'
+  }} >
+    <div className="blue-overlay">
 <div className='core-madate-section-two'>
+
   <h2>Key Objectives</h2>
       <div className="content-grid-two">
         
@@ -76,7 +100,8 @@ function AboutUs() {
         </div>
       </div>
 </div>
-      
+</div> 
+ </div> 
 
     </section>
   );

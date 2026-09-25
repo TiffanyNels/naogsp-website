@@ -1,7 +1,5 @@
 // src/App.jsx
 
-import { useState, useEffect } from 'react';
-import { supabase } from './supabaseClient';
 import './App.css';
 import { Routes, Route, useLocation } from 'react-router-dom';
 
@@ -17,40 +15,8 @@ import Partnerships from './components/Partnerships';
 import HeroImage from './assets/Offshore-background.webp';
 
 function App() {
-  const [naogspInfo, setNaogspInfo] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const location = useLocation();
   const isHomePage = location.pathname === '/';
-
-  useEffect(() => {
-    async function fetchData() {
-      setLoading(true);
-      setError(null);
-
-      const { data, error } = await supabase
-        .from('website_info') 
-        .select('*')
-        .limit(1);
-
-      if (error) {
-        console.error('Error fetching data from Supabase:', error);
-        setError('Failed to load company information from the database.');
-      } else {
-        setNaogspInfo(data[0]); 
-      }
-      setLoading(false);
-    }
-
-    fetchData();
-  }, []);
-
-  if (loading) {
-    return <div className="status-message">Loading NAOGSP Website...</div>;
-  }
-  if (error) {
-    return <div className="status-message error-message">Error: {error}</div>;
-  }
 
   return (
     <div className="app-container">
@@ -75,7 +41,7 @@ function App() {
 
       <main>
         <Routes>
-          <Route path="/" element={<Home naogspInfo={naogspInfo} />} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/what-we-do" element={<WhatWeDo />} />
           <Route path="/partnerships" element={<Partnerships />} />

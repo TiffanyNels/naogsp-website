@@ -14,13 +14,13 @@ import PatrickPhoto from '../assets/director_images/Patrick.jpeg';
 import SalomoPhoto from '../assets/director_images/Salomo.jpg';
 
 const directorsData = [
-  { name: 'Carl Pesat', photo: CarlPhoto },
-  { name: 'Andrew Mathias', photo: AndrewPhoto },
-  { name: 'Jamie-Lee Nels', photo: JamieleePhoto },
-  { name: 'Knowledge Ipinge', photo: KnowledgePhoto },
-  { name: 'Patrick Sam', photo: PatrickPhoto },
-  { name: 'Daniel Malherbe', photo: DanielPhoto },
-  { name: 'Salomo Hei', photo: SalomoPhoto },
+  { name: 'Carl Pesat', photo: CarlPhoto, title: '', bio: '' },
+  { name: 'Andrew Mathias', photo: AndrewPhoto, title: '', bio: '' },
+  { name: 'Jamie-Lee Nels', photo: JamieleePhoto, title: '', bio: '' },
+  { name: 'Knowledge Ipinge', photo: KnowledgePhoto, title: 'Founder', bio: '' },
+  { name: 'Patrick Sam', photo: PatrickPhoto, title: '', bio: '' },
+  { name: 'Daniel Malherbe', photo: DanielPhoto, title: '', bio: '' },
+  { name: 'Salomo Hei', photo: SalomoPhoto, title: '', bio: '' },
 ];
 
 function Home() { 
@@ -121,8 +121,8 @@ function Home() {
               </div>
               <h3>{director.name}</h3>
               <div className="info-block">
-                <p className="director-title">{director.title}</p>
-                <p className="director-bio">{director.bio}</p>
+                {director.title && <p className="director-title">{director.title}</p>}
+                {director.bio && <p className="director-bio">{director.bio}</p>}
               </div>
             </div>
           ))}
